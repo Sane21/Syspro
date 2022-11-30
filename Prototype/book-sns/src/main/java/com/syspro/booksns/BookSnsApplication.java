@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SysproApplication {
+public class BookSnsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SysproApplication.class, args);
+		SpringApplication.run(BookSnsApplication.class, args);
 	}
 
 }

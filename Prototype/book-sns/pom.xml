@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>syspro</artifactId>
+	<artifactId>book-sns</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>syspro</name>
+	<name>book-sns</name>
 	<description>技術書SNS</description>
 	<properties>
 		<java.version>17</java.version>
