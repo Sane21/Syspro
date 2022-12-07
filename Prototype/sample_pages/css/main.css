@@ -6,3 +6,8 @@
 .container {
     padding-top: 50px;
 }
+
+.icon {
+    height: 72px;
+    width: 72px;
+}
