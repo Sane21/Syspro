@@ -1,0 +1,8 @@
+.card {
+    max-width: 480px;
+}
+
+/* 画面上部に余白作る */
+.container {
+    padding-top: 50px;
+}
