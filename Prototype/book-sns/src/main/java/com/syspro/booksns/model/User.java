@@ -1,10 +1,19 @@
 package com.syspro.booksns.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
+@Getter //ゲッター、セッターが自動生成されるようにする
 @Setter
 public class User {
-	private String userId;
+	private Long userId;
+	
+	@NotBlank //文字列がnullか空文字、空白でないかを検証
+	@Size(max = 60) //文字列の最大長は60文字
+	private String name;
+	
+	@Size(max =1024)
+	private String profile;
 }
