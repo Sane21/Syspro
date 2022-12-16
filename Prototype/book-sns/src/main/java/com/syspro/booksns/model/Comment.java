@@ -22,7 +22,7 @@ public class Comment {
 	
 	@NotBlank
 	@Size(max = 1024)
-	private String Content;
+	private String content;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd") //入力時の期待フォーマット
 	@JsonFormat(pattern = "yyyy/MM/dd") //出力

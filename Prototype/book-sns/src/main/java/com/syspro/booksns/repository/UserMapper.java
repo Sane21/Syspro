@@ -8,5 +8,13 @@ import com.syspro.booksns.model.User;
 
 @Mapper
 public interface UserMapper {
-	public List<User> selectAll();
+	List<User> selectAll();
+	
+	User selectByPrimaryKey(Long id);
+	
+	int insert(User record);
+	
+	int updateByPrimaryKey(User record);
+	
+	int deleteByPrimaryKey(Long id);
 }

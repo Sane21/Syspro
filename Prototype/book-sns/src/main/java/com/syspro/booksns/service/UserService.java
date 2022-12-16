@@ -19,4 +19,17 @@ public class UserService {
 	public List<User> selectAll(){
 		return mapper.selectAll();
 	}
+	
+	public User selectByPrimaryKey(Long userId) {
+		return mapper.selectByPrimaryKey(userId);
+	}
+	
+	public void save(User user) {
+		if(user.getUserId() == null) mapper.insert(user);
+		else mapper.updateByPrimaryKey(user);
+	}
+	
+	public int deleteByPrimaryKey(Long userId) {
+		return mapper.deleteByPrimaryKey(userId);
+	}
 }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syspro.booksns.repository.CommentMapper">
+	<select id="selectAll" resultType="Comment">
+		SELECT * FROM comment
+	</select>
+	
+	<select id="selectByPrimaryKey" resultType="User">
+		SELECT * FROM comment
+		WHERE id = #{commentId}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO comment(targetBookId, editUserId, content, publishedDate)
+		VALUES(#{targetBookId}, #{editUserId}, #{content}, #{publishedDate})
+	</insert>
+	
+	<update id="updateByPrimaryKey">
+		UPDATE comment
+		SET targetBookId = #{targetBookId}, editUserId = #{editUserId}, content = #{content}, publishedDate = #{publishedDate}
+		WHERE commentId = #{commentId}
+	</update>
+	
+	<delete id="deleteByPrimaryKey">
+		DELETE FROM comment
+		WHERE commentId = #{commentId}
+	</delete>
+	
+	<!-- ここから下はテーブル結合の動作 -->
+	<resultMap type="com.syspro.booksns.model.Comment" id="comment">
+		<id property="commentId" column="comment_id"/>
+		<result property="content" column="content"/>
+		<result property="publishedDate" column="published_date"/>
+		<association property="targetBookId" column="target_book_id"></association> <!-- 1対1の結合 -->
+		<association property="editUserId" column="edit_user_id"></association>
+	</resultMap>
+	
+	<resultMap type="com.syspro.booksns.model.Book" id="book">
+		<id property="bookId" column="book_id"/>
+		<result property="lastEditedInfoId" column="last_edited_info_id"/>
+	</resultMap>
+	
+	<resultMap type="com.syspro.booksns.model.User" id="user">
+		<id property="userId" column="user_id"/>
+		<result property="name" column="name"/>
+		<result property="profile" column="profile"/>
+	</resultMap>
+	
+	<select id="selectBook" resultMap="book" resultType="Book">
+		SELECT book.*
+		FROM comment
+		INNER JOIN book
+		ON comment.target_book_id = book.book_id
+		WHERE comment_id = #{commentId}
+	</select>
+	
+	<select id="selectUser" resultMap="user" resultType="User">
+		SELECT users.*
+		FROM comment
+		INNER JOIN users
+		ON comment.comment_id = users.user_id
+		WHERE comment.comment_id = #{commentId}
+	</select>
+</mapper>
