@@ -7,22 +7,22 @@
 	
 	<select id="selectByPrimaryKey" resultType="PastBookInfo">
 		SELECT * FROM pastBookInfo
-		WHERE id = #{pastBookInfoId}
+		WHERE past_book_info_id = #{pastBookInfoId}
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO pastBookInfo(bookInfoId, lastDate)
+		INSERT INTO pastBookInfo(book_info_id, last_date)
 		VALUES(#{bookInfoId}, #{lastDate})
 	</insert>
 	
 	<update id="updateByPrimaryKey">
 		UPDATE pastBookInfo
-		SET bookInfoId = #{bookInfoId}, lastDate = #{lastDate}
-		WHERE pastBookInfoId = #{pastBookInfoId}
+		SET book_info_id = #{bookInfoId}, last_date = #{lastDate}
+		WHERE past_book_info_id = #{pastBookInfoId}
 	</update>
 	
 	<delete id="deleteByPrimaryKey">
 		DELETE FROM pastBookInfo
-		WHERE pastBookInfoId = #{pastBookInfoId}
+		WHERE past_book_info_id = #{pastBookInfoId}
 	</delete>
 </mapper>

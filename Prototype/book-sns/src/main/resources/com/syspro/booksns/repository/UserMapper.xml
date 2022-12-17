@@ -7,7 +7,7 @@
 	
 	<select id="selectByPrimaryKey" resultType="User">
 		SELECT * FROM users
-		WHERE id = #{userId}
+		WHERE user_id = #{userId}
 	</select>
 	
 	<insert id="insert">
@@ -18,11 +18,11 @@
 	<update id="updateByPrimaryKey">
 		UPDATE users
 		SET name = #{name}, profile = #{profile}
-		WHERE userId = #{userId}
+		WHERE user_id = #{userId}
 	</update>
 	
 	<delete id="deleteByPrimaryKey">
 		DELETE FROM users
-		WHERE userId = #{userId}
+		WHERE user_id = #{userId}
 	</delete>
 </mapper>

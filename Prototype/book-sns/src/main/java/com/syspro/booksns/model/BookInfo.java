@@ -21,12 +21,18 @@ public class BookInfo {
 	@Size(max = 1024)
 	private String name;
 	
+	@NotBlank
+	@Size(max =1024)
+	private String author;
+	
+	@NotBlank
 	private int ISBN;
 	
 	@DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
 	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss")
 	private LocalDateTime lastEditDate;
 	
+	@NotBlank
 	private Long editorId; //外部キー
 	
 	private List<PastBookInfo> pastBookInfos; //外部キー

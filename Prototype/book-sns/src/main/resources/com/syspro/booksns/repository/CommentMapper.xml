@@ -7,23 +7,23 @@
 	
 	<select id="selectByPrimaryKey" resultType="User">
 		SELECT * FROM comment
-		WHERE id = #{commentId}
+		WHERE comment_id = #{commentId}
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO comment(targetBookId, editUserId, content, publishedDate)
+		INSERT INTO comment(target_book_id, edit_user_id, content, published_date)
 		VALUES(#{targetBookId}, #{editUserId}, #{content}, #{publishedDate})
 	</insert>
 	
 	<update id="updateByPrimaryKey">
 		UPDATE comment
-		SET targetBookId = #{targetBookId}, editUserId = #{editUserId}, content = #{content}, publishedDate = #{publishedDate}
-		WHERE commentId = #{commentId}
+		SET target_book_id = #{targetBookId}, edit_user_id = #{editUserId}, content = #{content}, published_date = #{publishedDate}
+		WHERE comment_id = #{commentId}
 	</update>
 	
 	<delete id="deleteByPrimaryKey">
 		DELETE FROM comment
-		WHERE commentId = #{commentId}
+		WHERE comment_id = #{commentId}
 	</delete>
 	
 	<!-- ここから下はテーブル結合の動作 -->

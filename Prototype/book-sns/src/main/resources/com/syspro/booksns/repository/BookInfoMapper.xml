@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syspro.booksns.repository.BookInfoMapper">
+	<select id="selectAll" resultType="BookInfo">
+		SELECT * FROM bookInfo
+	</select>
+	
+	<select id="selectByPrimaryKey" resultType="BookInfo">
+		SELECT * FROM bookInfo
+		WHERE book_info_id = #{bookInfoId}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO bookInfo(name, author, ISBN, last_edit_date)
+		VALUES(#{name}, #{author}, #{ISBN}, #{lastEditDate})
+	</insert>
+	
+	<update id="updateByPrimaryKey">
+		UPDATE bookInfo
+		SET name = #{name}, author = #{author}, ISBN = #{ISBN}, last_edit_date = #{lastEditDate}
+		WHERE book_info_id = #{bookInfoId}
+	</update>
+	
+	<delete id="deleteByPrimaryKey">
+		DELETE FROM bookInfo
+		WHERE book_info_id = #{bookInfoId}
+	</delete>
+</mapper>

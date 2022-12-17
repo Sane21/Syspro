@@ -7,22 +7,22 @@
 	
 	<select id="selectByPrimaryKey" resultType="Book">
 		SELECT * FROM book
-		WHERE id = #{bookId}
+		WHERE book_id = #{bookId}
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO book(lastEditedInfoId)
-		VALUES(#{lastEditedInfoId}, #{lastEditedInfoId})
+		INSERT INTO book(last_edited_info_id)
+		VALUES(#{lastEditedInfoId})
 	</insert>
 	
 	<update id="updateByPrimaryKey">
 		UPDATE book
-		SET lastEditedInfoId = #{lastEditedInfoId}
-		WHERE bookId = #bookId}
+		SET last_edited_info_id = #{lastEditedInfoId}
+		WHERE book_id = #bookId}
 	</update>
 	
 	<delete id="deleteByPrimaryKey">
 		DELETE FROM book
-		WHERE bookId = #{bookId}
+		WHERE book_id = #{bookId}
 	</delete>
 </mapper>
