@@ -11,13 +11,13 @@
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO bookInfo(name, author, ISBN, last_edit_date)
-		VALUES(#{name}, #{author}, #{ISBN}, #{lastEditDate})
+		INSERT INTO bookInfo(name, author, ISBN, last_edit_date, editor_id)
+		VALUES(#{name}, #{author}, #{ISBN}, #{lastEditDate}, #{editorId})
 	</insert>
 	
 	<update id="updateByPrimaryKey">
 		UPDATE bookInfo
-		SET name = #{name}, author = #{author}, ISBN = #{ISBN}, last_edit_date = #{lastEditDate}
+		SET name = #{name}, author = #{author}, ISBN = #{ISBN}, last_edit_date = #{lastEditDate}, editor_id = #{editorId}
 		WHERE book_info_id = #{bookInfoId}
 	</update>
 	

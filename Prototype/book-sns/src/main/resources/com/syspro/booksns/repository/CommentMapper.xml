@@ -2,27 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.syspro.booksns.repository.CommentMapper">
 	<select id="selectAll" resultType="Comment">
-		SELECT * FROM comment
+		SELECT * FROM comments
 	</select>
 	
 	<select id="selectByPrimaryKey" resultType="User">
-		SELECT * FROM comment
+		SELECT * FROM comments
 		WHERE comment_id = #{commentId}
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO comment(target_book_id, edit_user_id, content, published_date)
+		INSERT INTO comments(target_book_id, edit_user_id, content, published_date)
 		VALUES(#{targetBookId}, #{editUserId}, #{content}, #{publishedDate})
 	</insert>
 	
 	<update id="updateByPrimaryKey">
-		UPDATE comment
+		UPDATE comments
 		SET target_book_id = #{targetBookId}, edit_user_id = #{editUserId}, content = #{content}, published_date = #{publishedDate}
 		WHERE comment_id = #{commentId}
 	</update>
 	
 	<delete id="deleteByPrimaryKey">
-		DELETE FROM comment
+		DELETE FROM comments
 		WHERE comment_id = #{commentId}
 	</delete>
 	
@@ -48,17 +48,17 @@
 	
 	<select id="selectBook" resultMap="book" resultType="Book">
 		SELECT book.*
-		FROM comment
+		FROM comments
 		INNER JOIN book
-		ON comment.target_book_id = book.book_id
-		WHERE comment_id = #{commentId}
+		ON comments.target_book_id = book.book_id
+		WHERE comments_id = #{commentId}
 	</select>
 	
 	<select id="selectUser" resultMap="user" resultType="User">
 		SELECT users.*
-		FROM comment
+		FROM comments
 		INNER JOIN users
-		ON comment.comment_id = users.user_id
-		WHERE comment.comment_id = #{commentId}
+		ON comments.comment_id = users.user_id
+		WHERE comments.comment_id = #{commentId}
 	</select>
 </mapper>

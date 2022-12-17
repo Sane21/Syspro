@@ -1,5 +1,6 @@
 package com.syspro.booksns.model;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,5 +9,6 @@ import lombok.Setter;
 public class Book {
 	private Long bookId;
 	
-	private Long lastEditetIndoId;
+	@NotBlank
+	private Long lastEditedIndoId;
 }

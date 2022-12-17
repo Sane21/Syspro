@@ -24,6 +24,7 @@ public class Comment {
 	@Size(max = 1024)
 	private String content;
 	
+	@NotBlank
 	@DateTimeFormat(pattern = "yyyy-MM-dd") //入力時の期待フォーマット
 	@JsonFormat(pattern = "yyyy/MM/dd") //出力
 	private LocalDate publishedDate;
