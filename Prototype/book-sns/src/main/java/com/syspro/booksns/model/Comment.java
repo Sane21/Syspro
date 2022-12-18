@@ -2,12 +2,13 @@ package com.syspro.booksns.model;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +19,7 @@ public class Comment {
 	
 	private Long targetBookId;
 	
-	private Long edituserId;
+	private Long editUserId;
 	
 	@NotBlank
 	@Size(max = 1024)
