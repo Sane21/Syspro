@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.syspro.booksns.model.BookInfo;
+import com.syspro.booksns.model.PastBookInfo;
+import com.syspro.booksns.model.User;
 import com.syspro.booksns.repository.BookInfoMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -31,5 +33,13 @@ public class BookInfoService {
 	
 	public int deleteByPrimaryKey(Long bookInfoId) {
 		return mapper.deleteByPrimaryKey(bookInfoId);
+	}
+	
+	public User selectUser(BookInfo bookinfo) {
+		return mapper.selectUser(bookinfo);
+	}
+	
+	public List<PastBookInfo> selectInfos(BookInfo bookInfo){
+		return mapper.selectInfos(bookInfo);
 	}
 }

@@ -33,7 +33,7 @@ public class BookInfo {
 	private LocalDateTime lastEditDate;
 	
 	@NotBlank
-	private Long editorId; //外部キー
+	private User user; //外部キー
 	
 	private List<PastBookInfo> pastBookInfos; //外部キー
 }

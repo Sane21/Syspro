@@ -1,6 +1,6 @@
 package com.syspro.booksns.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -21,5 +21,5 @@ public class PastBookInfo {
 	@NotBlank
 	@DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
 	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss")
-	private LocalDate lastDate;
+	private LocalDateTime lastDate;
 }
