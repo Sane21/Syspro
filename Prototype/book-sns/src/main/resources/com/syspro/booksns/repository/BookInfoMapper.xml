@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.syspro.booksns.repository.BookInfoMapper">
-	<select id="selectAll" resultType="BookInfo">
+	<select id="selectAll" resultType="com.syspro.booksns.model.BookInfo">
 		SELECT * FROM bookInfo
 	</select>
 	
-	<select id="selectByPrimaryKey" resultType="BookInfo">
+	<select id="selectByPrimaryKey" resultType="com.syspro.booksns.model.BookInfo">
 		SELECT * FROM bookInfo
 		WHERE book_info_id = #{bookInfoId}
 	</select>
@@ -47,7 +47,7 @@
 		<result property="lastDate" column="last_date"/>
 	</resultMap>
 	
-	<select id="selectUser" resultMap="user" resultType="User">
+	<select id="selectUser" resultMap="user" resultType="com.syspro.booksns.model.User">
 		SELECT users.*
 		FROM bookInfo
 		INNER JOIN users
@@ -55,7 +55,7 @@
 		WHERE bookInfo.book_info_id = #{bookInfoId}
 	</select>
 	
-	<select id="selectInfos" resultMap="pastBookInfo" resultType="PastBookInfo">
+	<select id="selectInfos" resultMap="pastBookInfo" resultType="com.syspro.booksns.model.PastBookInfo">
 		SELECT pastBookInfo.*
 		FROM bookInfo
 		INNER JOIN pastBookInfo

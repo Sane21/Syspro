@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.syspro.booksns.repository.CommentMapper">
-	<select id="selectAll" resultType="Comment">
+	<select id="selectAll" resultType="com.syspro.booksns.model.Comment">
 		SELECT * FROM comments
 	</select>
 	
-	<select id="selectByPrimaryKey" resultType="User">
+	<select id="selectByPrimaryKey" resultType="com.syspro.booksns.model.User">
 		SELECT * FROM comments
 		WHERE comment_id = #{commentId}
 	</select>
@@ -46,7 +46,7 @@
 		<result property="profile" column="profile"/>
 	</resultMap>
 	
-	<select id="selectBook" resultMap="book" resultType="Book">
+	<select id="selectBook" resultMap="book" resultType="com.syspro.booksns.model.Book">
 		SELECT book.*
 		FROM comments
 		INNER JOIN book
@@ -54,7 +54,7 @@
 		WHERE comments_id = #{commentId}
 	</select>
 	
-	<select id="selectUser" resultMap="user" resultType="User">
+	<select id="selectUser" resultMap="user" resultType="com.syspro.booksns.model.User">
 		SELECT users.*
 		FROM comments
 		INNER JOIN users

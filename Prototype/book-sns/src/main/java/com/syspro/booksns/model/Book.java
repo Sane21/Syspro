@@ -11,5 +11,5 @@ public class Book {
 	private Long bookId;
 	
 	@NotBlank
-	private Long lastEditedIndoId;
+	private Long lastEditedInfoId;
 }
