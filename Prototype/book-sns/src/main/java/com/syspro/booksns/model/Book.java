@@ -1,7 +1,5 @@
 package com.syspro.booksns.model;
 
-import javax.validation.constraints.NotBlank;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +8,5 @@ import lombok.Setter;
 public class Book {
 	private Long bookId;
 	
-	@NotBlank
-	private Long lastEditedInfoId;
+	private BookInfo lastEditedBookInfo;
 }

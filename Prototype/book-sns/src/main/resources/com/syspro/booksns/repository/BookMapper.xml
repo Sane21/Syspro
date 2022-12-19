@@ -25,4 +25,37 @@
 		DELETE FROM book
 		WHERE book_id = #{bookId}
 	</delete>
+	
+	<resultMap type="com.syspro.booksns.model.Book" id="book">
+		<id property="bookId" column="book_id"/>
+		<association property="lastEditedBookInfo" resultMap="bookInfo"/>
+	</resultMap>
+	
+	<resultMap type="com.syspro.booksns.model.BookInfo" id="bookInfo">
+		<id property="bookInfoId" column="book_info_id"/>
+		<result property="name" column="name"/>
+		<result property="author" column="author"/>
+		<result property="ISBN" column="ISBN"/>
+		<result property="lastEditDate" column="last_edit_date"/>
+		<association property="user" resultMap="user"/>
+		<collection property="pastBookInfos" resultMap="pastBookInfo"/>
+	</resultMap>
+	
+	<resultMap type="com.syspro.booksns.model.User" id="user">
+		<id property="userId" column="user_id"/>
+		<result property="name" column="name"/>
+		<result property="profile" column="profile"/>
+	</resultMap>
+	
+	<resultMap type="com.syspro.booksns.model.PastBookInfo" id="pastBookInfo">
+		<id property="pastBookInfoId" column="past_book_info_id"/>
+		<result property="bookInfoId" column="book_info_id"/>
+		<result property="lastDate" column="last_date"/>
+	</resultMap>
+	
+	<select id="selectBookInfo" resultMap="bookInfo" resultType="com.syspro.booksns.model.BookInfo">
+		SELECT * 
+		FROM bookInfo
+		WHERE bookInfo.book_info_id = #{id}
+	</select>
 </mapper>
