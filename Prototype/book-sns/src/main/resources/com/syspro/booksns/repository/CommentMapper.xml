@@ -27,39 +27,30 @@
 	</delete>
 	
 	<!-- ここから下はテーブル結合の動作 -->
-	<resultMap type="com.syspro.booksns.model.Comment" id="comment">
+	<resultMap type="com.syspro.booksns.model.Comment" id="comment" autoMapping="true">
 		<id property="commentId" column="comment_id"/>
-		<result property="content" column="content"/>
-		<result property="publishedDate" column="published_date"/>
-		<association property="targetBookId" column="target_book_id"></association> <!-- 1対1の結合 -->
-		<association property="editUserId" column="edit_user_id"></association>
+		<association property="targetBook" column="target_book_id"></association> <!-- 1対1の結合 -->
+		<association property="editUser" column="edit_user_id"></association>
 	</resultMap>
 	
-	<resultMap type="com.syspro.booksns.model.BookInfo" id="bookInfo">
+	<resultMap type="com.syspro.booksns.model.BookInfo" id="bookInfo" autoMapping="true">
 		<id property="bookInfoId" column="book_info_id"/>
-		<result property="name" column="name"/>
-		<result property="author" column="author"/>
-		<result property="ISBN" column="ISBN"/>
-		<result property="lastEditDate" column="last_edit_date"/>
 		<association property="user" resultMap="user"/>
 		<collection property="pastBookInfos" resultMap="pastBookInfo"/>
 	</resultMap>
 	
-	<resultMap type="com.syspro.booksns.model.Book" id="book">
+	<resultMap type="com.syspro.booksns.model.Book" id="book" autoMapping="true">
 		<id property="bookId" column="book_id"/>
 		<association property="lastEditedBookInfo" resultMap="bookInfo"/>
 	</resultMap>
 	
-	<resultMap type="com.syspro.booksns.model.User" id="user">
+	<resultMap type="com.syspro.booksns.model.User" id="user" autoMapping="true">
 		<id property="userId" column="user_id"/>
-		<result property="name" column="name"/>
-		<result property="profile" column="profile"/>
 	</resultMap>
 	
-	<resultMap type="com.syspro.booksns.model.PastBookInfo" id="pastBookInfo">
+	<resultMap type="com.syspro.booksns.model.PastBookInfo" id="pastBookInfo" autoMapping="true">
 		<id property="pastBookInfoId" column="past_book_info_id"/>
-		<result property="bookInfoId" column="book_info_id"/>
-		<result property="lastDate" column="last_date"/>
+		<association property="bookInfo" resultMap="bookInfo"/>
 	</resultMap>
 	
 	<select id="selectBook" resultMap="book" resultType="com.syspro.booksns.model.Book">

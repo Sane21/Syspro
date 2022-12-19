@@ -17,9 +17,9 @@ import lombok.Setter;
 public class Comment {
 	private Long commentId;
 	
-	private Long targetBookId;
+	private Book targetBook;
 	
-	private Long editUserId;
+	private User editUser;
 	
 	@NotBlank
 	@Size(max = 1024)

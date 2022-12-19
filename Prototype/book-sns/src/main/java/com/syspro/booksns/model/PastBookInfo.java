@@ -17,7 +17,7 @@ public class PastBookInfo {
 	private Long pastBookInfoId;
 	
 	@NotBlank
-	private Long bookInfoId; //外部キー
+	private BookInfo bookInfo; //外部キー
 	
 	@NotBlank
 	@DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
