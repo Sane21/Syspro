@@ -1,6 +1,7 @@
 package com.syspro.booksns.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,5 +22,11 @@ public class HomeController {
 	@ResponseBody
 	public String index() {
 		return "Hello";
+	}
+	
+	@GetMapping("/test")
+	public String test(Model model) {
+		model.addAttribute("users", userService.selectAll());
+		return "index";
 	}
 }
