@@ -11,13 +11,13 @@
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO book(last_edited_info_id)
-		VALUES(#{lastEditedInfoId})
+		INSERT INTO book(name, author, ISBN, last_edit_date, editor_id)
+		VALUES(#{name}, #{author}, #{ISBN}, CURRENT_TIME, #{editor.userId})
 	</insert>
 	
 	<update id="updateByPrimaryKey">
 		UPDATE book
-		SET last_edited_info_id = #{lastEditedInfoId}
+		SET name = #{name}, author = #{author}, ISBN = #{ISBN}, last_edit_date = CURRENT_TIME, editor_id = #{editor.userId}
 		WHERE book_id = #bookId}
 	</update>
 	
@@ -34,4 +34,12 @@
 	<resultMap type="com.syspro.booksns.model.User" id="user" autoMapping="true">
 		<id property="userId" column="user_id"/>
 	</resultMap>
+	
+	<select id="selectUser" resultMap="user">
+		SELECT users.*
+		FROM book
+		INNER JOIN users
+		ON book.editor_id = users.user_id
+		WHERE book.book_id = #{id}
+	</select>
 </mapper>

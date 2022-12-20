@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.syspro.booksns.model.Book;
 import com.syspro.booksns.model.Comment;
+import com.syspro.booksns.model.User;
 import com.syspro.booksns.repository.CommentMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -31,5 +33,13 @@ public class CommentService {
 	
 	public int deleteByPrimaryKey(Long commentId) {
 		return mapper.deleteByPrimaryKey(commentId);
+	}
+	
+	public Book selectBook(Comment record) {
+		return mapper.selectBook(record);
+	}
+	
+	public User selectUser(Comment record) {
+		return mapper.selectUser(record);
 	}
 }
