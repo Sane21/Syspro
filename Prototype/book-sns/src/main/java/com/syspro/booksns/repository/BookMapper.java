@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.syspro.booksns.model.Book;
-import com.syspro.booksns.model.BookInfo;
+import com.syspro.booksns.model.User;
 
 @Mapper
 public interface BookMapper {
@@ -19,5 +19,5 @@ public interface BookMapper {
 	
 	int deleteByPrimaryKey(Long id);
 	
-	BookInfo selectBookInfo(Long id);
+	User selectUser(Long id);
 }

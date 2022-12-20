@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.syspro.booksns.repository.CommentMapper">
-	<select id="selectAll" resultType="com.syspro.booksns.model.Comment">
+	<select id="selectAll" resultMap="comment">
 		SELECT * FROM comments
 	</select>
 	
-	<select id="selectByPrimaryKey" resultType="com.syspro.booksns.model.User">
+	<select id="selectByPrimaryKey" resultMap="comment">
 		SELECT * FROM comments
 		WHERE comment_id = #{commentId}
 	</select>
@@ -29,29 +29,19 @@
 	<!-- ここから下はテーブル結合の動作 -->
 	<resultMap type="com.syspro.booksns.model.Comment" id="comment" autoMapping="true">
 		<id property="commentId" column="comment_id"/>
-		<association property="targetBook" column="target_book_id"></association> <!-- 1対1の結合 -->
-		<association property="editUser" column="edit_user_id"></association>
-	</resultMap>
-	
-	<resultMap type="com.syspro.booksns.model.BookInfo" id="bookInfo" autoMapping="true">
-		<id property="bookInfoId" column="book_info_id"/>
-		<association property="user" resultMap="user"/>
-		<collection property="pastBookInfos" resultMap="pastBookInfo"/>
+		<association property="targetBook" resultMap="book"/> <!-- 1対1の結合 -->
+		<association property="editUser" resultMap="user"/>
 	</resultMap>
 	
 	<resultMap type="com.syspro.booksns.model.Book" id="book" autoMapping="true">
 		<id property="bookId" column="book_id"/>
-		<association property="lastEditedBookInfo" resultMap="bookInfo"/>
+		<association property="editor" resultMap="user"/>
 	</resultMap>
 	
 	<resultMap type="com.syspro.booksns.model.User" id="user" autoMapping="true">
 		<id property="userId" column="user_id"/>
 	</resultMap>
 	
-	<resultMap type="com.syspro.booksns.model.PastBookInfo" id="pastBookInfo" autoMapping="true">
-		<id property="pastBookInfoId" column="past_book_info_id"/>
-		<association property="bookInfo" resultMap="bookInfo"/>
-	</resultMap>
 	
 	<select id="selectBook" resultMap="book" resultType="com.syspro.booksns.model.Book">
 		SELECT book.*

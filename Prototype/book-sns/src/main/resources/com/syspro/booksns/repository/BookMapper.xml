@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.syspro.booksns.repository.BookMapper">
-	<select id="selectAll" resultType="com.syspro.booksns.model.Book">
+	<select id="selectAll" resultMap="book">
 		SELECT * FROM book
 	</select>
 	
-	<select id="selectByPrimaryKey" resultType="com.syspro.booksns.model.Book">
+	<select id="selectByPrimaryKey" resultMap="book">
 		SELECT * FROM book
 		WHERE book_id = #{bookId}
 	</select>
@@ -28,26 +28,10 @@
 	
 	<resultMap type="com.syspro.booksns.model.Book" id="book" autoMapping="true">
 		<id property="bookId" column="book_id"/>
-		<association property="lastEditedBookInfo" resultMap="bookInfo"/>
-	</resultMap>
-	
-	<resultMap type="com.syspro.booksns.model.BookInfo" id="bookInfo" autoMapping="true">
-		<id property="bookInfoId" column="book_info_id"/>
-		<association property="user" resultMap="user"/>
-		<collection property="pastBookInfos" resultMap="pastBookInfo"/>
+		<association property="editor" resultMap="user"/>
 	</resultMap>
 	
 	<resultMap type="com.syspro.booksns.model.User" id="user" autoMapping="true">
 		<id property="userId" column="user_id"/>
 	</resultMap>
-	
-	<resultMap type="com.syspro.booksns.model.PastBookInfo" id="pastBookInfo" autoMapping="true">
-		<id property="pastBookInfoId" column="past_book_info_id"/>
-	</resultMap>
-	
-	<select id="selectBookInfo" resultMap="bookInfo" resultType="com.syspro.booksns.model.BookInfo">
-		SELECT * 
-		FROM bookInfo
-		WHERE bookInfo.book_info_id = #{id}
-	</select>
 </mapper>
