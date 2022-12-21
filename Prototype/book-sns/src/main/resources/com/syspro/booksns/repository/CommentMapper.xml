@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syspro.booksns.repository.CommentMapper">
+	<select id="selectAll" resultMap="comment">
+		SELECT * FROM comments
+	</select>
+	
+	<select id="selectByPrimaryKey" resultMap="comment">
+		SELECT * FROM comments
+		WHERE comment_id = #{id}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO comments(target_book_id, edit_user_id, content, published_date)
+		VALUES(#{targetBook.bookId}, #{editUser.user_id}, #{content}, CURRENT_TIME)
+	</insert>
+	
+	<update id="updateByPrimaryKey">
+		UPDATE comments
+		SET target_book_id = #{targetBook.bookId}, edit_user_id = #{editUser.userId}, content = #{content}, published_date = CURRENT_TIME
+		WHERE comment_id = #{commentId}
+	</update>
+	
+	<delete id="deleteByPrimaryKey">
+		DELETE FROM comments
+		WHERE comment_id = #{id}
+	</delete>
+	
+	<!-- ここから下はテーブル結合の動作 -->
+	<resultMap type="com.syspro.booksns.model.Comment" id="comment" autoMapping="true">
+		<id property="commentId" column="comment_id"/>
+		<association property="targetBook" resultMap="book"/> <!-- 1対1の結合 -->
+		<association property="editUser" resultMap="user"/>
+	</resultMap>
+	
+	<resultMap type="com.syspro.booksns.model.Book" id="book" autoMapping="true">
+		<id property="bookId" column="book_id"/>
+		<association property="editor" resultMap="user"/>
+	</resultMap>
+	
+	<resultMap type="com.syspro.booksns.model.User" id="user" autoMapping="true">
+		<id property="userId" column="user_id"/>
+	</resultMap>
+	
+	
+	<select id="selectBook" resultMap="book" resultType="com.syspro.booksns.model.Book">
+		SELECT book.*
+		FROM comments
+		INNER JOIN book
+		ON comments.target_book_id = book.book_id
+		WHERE comments_id = #{id}
+	</select>
+	
+	<select id="selectUser" resultMap="user" resultType="com.syspro.booksns.model.User">
+		SELECT users.*
+		FROM comments
+		INNER JOIN users
+		ON comments.comment_id = users.user_id
+		WHERE comments.comment_id = #{id}
+	</select>
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syspro.booksns.repository.BookMapper">
+	<select id="selectAll" resultMap="book">
+		SELECT * FROM book
+	</select>
+	
+	<select id="selectByPrimaryKey" resultMap="book">
+		SELECT * FROM book
+		WHERE book_id = #{bookId}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO book(name, author, ISBN, last_edit_date, editor_id)
+		VALUES(#{name}, #{author}, #{ISBN}, CURRENT_TIME, #{editor.userId})
+	</insert>
+	
+	<update id="updateByPrimaryKey">
+		UPDATE book
+		SET name = #{name}, author = #{author}, ISBN = #{ISBN}, last_edit_date = CURRENT_TIME, editor_id = #{editor.userId}
+		WHERE book_id = #bookId}
+	</update>
+	
+	<delete id="deleteByPrimaryKey">
+		DELETE FROM book
+		WHERE book_id = #{bookId}
+	</delete>
+	
+	<resultMap type="com.syspro.booksns.model.Book" id="book" autoMapping="true">
+		<id property="bookId" column="book_id"/>
+		<association property="editor" resultMap="user"/>
+	</resultMap>
+	
+	<resultMap type="com.syspro.booksns.model.User" id="user" autoMapping="true">
+		<id property="userId" column="user_id"/>
+	</resultMap>
+	
+	<select id="selectUser" resultMap="user">
+		SELECT users.*
+		FROM book
+		INNER JOIN users
+		ON book.editor_id = users.user_id
+		WHERE book.book_id = #{id}
+	</select>
+</mapper>

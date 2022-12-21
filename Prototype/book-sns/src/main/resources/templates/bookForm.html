@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8" th:remove="tag">
+<!-- bootstrap読込 -->
+<title>技術書投稿ページ</title>
+</head>
+
+<body class="bg-light h-100 vstack">
+    <div layout:fragment="content" class="container-fluid">
+
+        <div class = "container">
+            <div class = "row align-items-center justify-content-center">
+                <div class ="card shadow">
+                    <div class ="card-body">
+                        <h3 class="card-title mb-3 text-center text-navy">技術書登録</h3>
+                        <form th:action="@{/add}" th:object="${book}" method="post" novalidate>
+                            <input type="hidden" th:field="*{bookId}">
+                            <div class="mb-3">
+                                <label for="book_name" class="form-label">
+                                    <span class="badge bg-danger">必須</span>
+                                    書名
+                                </label>
+                                <input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{name}">
+                                <div class="invalid-feedback" th:errors="*{name}"></div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="book_isbn" class="form-label">
+                                    <span class="badge bg-danger">必須</span>
+                                    ISBN
+                                </label>
+                                <input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{ISBN}">
+                                <div class="invalid-feedback" th:errors="*{ISBN}"></div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="author_name" class="form-label">
+                                    <span class="badge bg-danger">必須</span>
+                                    著者名
+                                </label>
+                                <input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{author}">
+                                <div class="invalid-feedback" th:errors="*{author}"></div>
+                            </div>
+                            <button class="w-100 btn btn-secondary" type="submit">新規登録</button>
+                        </form>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

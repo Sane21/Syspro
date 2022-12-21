@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8" th:remove="tag">
+<title>Insert title here</title>
+</head>
+<body>
+    <div layout:fragment="content" class="container-fluid">
+        <p>test</p>
+        <!--
+        <th:block th:each="user : ${users}" th:object="${user}">
+            <p th:text="*{name}"></p>
+        </th:block>
+        -->
+        <div th:object="${user}">
+            <p th:text="*{name}"></p>
+            <p th:text="*{profile}"></p>
+        </div>
+    </div>
+</body>
+</html>
