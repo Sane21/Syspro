@@ -1,104 +1,105 @@
-This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.euc) (TeX Live 2020) (preloaded format=platex 2020.9.20)  21 DEC 2022 16:15
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2022.12.23)  24 DEC 2022 13:22
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/houjousouun/sns/Syspro/doc/specifications.tex
-(/Users/houjousouun/sns/Syspro/doc/specifications.tex
-pLaTeX2e <2020-04-12> (based on LaTeX2e <2020-02-02> patch level 5)
-L3 programming layer <2020-09-06> (/usr/local/texlive/2020/texmf-dist/tex/platex/jsclasses/jsarticle.cls
-Document Class: jsarticle 2020/02/02 jsclasses (okumura, texjporg)
-\jsc@mpt=\dimen150
-\jsc@mmm=\dimen151
-\jsc@smallskipamount=\skip47
-LaTeX Info: Redefining \textmc on input line 496.
-LaTeX Info: Redefining \textgt on input line 498.
+**c:/Users/PC_User/Documents/Syspro/doc/specifications
+(c:/Users/PC_User/Documents/Syspro/doc/specifications.tex
+pLaTeX2e <2021-11-15>+1 (based on LaTeX2e <2022-11-01> patch level 1)
+L3 programming layer <2022-12-17> (c:/texlive/2022/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+Document Class: jsarticle 2022/09/13 jsclasses (okumura, texjporg)
+\jsc@mpt=\dimen156
+\jsc@mmm=\dimen157
+\jsc@smallskipamount=\skip48
+LaTeX Info: Redefining \textmc on input line 500.
+LaTeX Info: Redefining \textgt on input line 502.
 \symmincho=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
-(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 560.
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 564.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 751.
+(Font)              scaled to size 9.60999pt on input line 758.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 751.
-\fullwidth=\dimen152
+(Font)              scaled to size 9.60999pt on input line 758.
+\fullwidth=\dimen158
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 904.
+(Font)              scaled to size 7.68799pt on input line 911.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 904.
-\c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\@abstractbox=\box61
-\c@figure=\count173
-\c@table=\count174
-\abovecaptionskip=\skip48
-\belowcaptionskip=\skip49
-\jsc@tocl@width=\dimen153
-\@lnumwidth=\dimen154
-\bibindent=\dimen155
-(/usr/local/texlive/2020/texmf-dist/tex/platex/jsclasses/jslogo.sty
+(Font)              scaled to size 7.68799pt on input line 911.
+\c@part=\count184
+\c@section=\count185
+\c@subsection=\count186
+\c@subsubsection=\count187
+\c@paragraph=\count188
+\c@subparagraph=\count189
+\@abstractbox=\box68
+\c@figure=\count190
+\c@table=\count191
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\jsc@tocl@width=\dimen159
+\@lnumwidth=\dimen160
+\bibindent=\dimen161
+(c:/texlive/2022/texmf-dist/tex/platex/jsclasses/jslogo.sty
 Package: jslogo 2019/07/25 okumura, texjporg
-LaTeX Info: Redefining \TeX on input line 94.
-LaTeX Info: Redefining \LaTeX on input line 147.
-LaTeX Info: Redefining \LaTeXe on input line 200.
+LaTeX Info: Redefining \TeX on input line 82.
+LaTeX Info: Redefining \LaTeX on input line 135.
+LaTeX Info: Redefining \LaTeXe on input line 188.
 )
-\heisei=\count175
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
- (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+\heisei=\count192
+) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (c:/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvipdfmx.def on input line 105.
- (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
-File: dvipdfmx.def 2020/08/26 v5.0h Graphics/color driver for dvipdfmx
+Package graphics Info: Driver file: dvipdfmx.def on input line 107.
+ (c:/texlive/2022/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
+File: dvipdfmx.def 2022/09/22 v5.0m Graphics/color driver for dvipdfmx
 ))
-\Gin@req@height=\dimen156
-\Gin@req@width=\dimen157
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2020/09/12 v3.5b Customizing captions (AR)
- (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2020/09/17 v2.1b caption3 kernel (AR)
-\captionmargin=\dimen158
-\captionmargin@=\dimen159
-\captionwidth=\dimen160
-\caption@tempdima=\dimen161
-\caption@indent=\dimen162
-\caption@parindent=\dimen163
-\caption@hangindent=\dimen164
+\Gin@req@height=\dimen162
+\Gin@req@width=\dimen163
+) (c:/texlive/2022/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+ (c:/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen164
+\captionmargin=\dimen165
+\caption@leftmargin=\dimen166
+\caption@rightmargin=\dimen167
+\caption@width=\dimen168
+\caption@indent=\dimen169
+\caption@parindent=\dimen170
+\caption@hangindent=\dimen171
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
-Package caption Info: \@makecaption = \long macro:#1#2->{\small \advance \leftskip .0628\linewidth \advance \rightskip .0628\linewidth \vskip \abovecaptionskip \sbox \@tempboxa {#1\hskip 1zw\relax #2}\ifdim \wd \@tempboxa <\hsize \centering \fi #1{\hskip 1zw\relax }#2\par \vskip \belowcaptionskip } on input line 1120.
+Package caption Info: \@makecaption = \long macro:#1#2->{\small \advance \leftskip .0628\linewidth \advance \rightskip .0628\linewidth \vskip \abovecaptionskip \sbox \@tempboxa {#1\hskip 1zw\relax #2}\ifdim \wd \@tempboxa <\hsize \centering \fi #1{\hskip 1zw\relax }#2\par \vskip \belowcaptionskip } on input line 1176.
 )
 
 Package caption Warning: Unknown document class (or package),
 (caption)                standard defaults will be used.
 See the caption package documentation for explanation.
 
-\c@caption@flags=\count176
-\c@continuedfloat=\count177
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/here/here.sty) (/usr/local/texlive/2020/texmf-dist/tex/latex/float/float.sty
+\c@caption@flags=\count193
+\c@continuedfloat=\count194
+) (c:/texlive/2022/texmf-dist/tex/latex/here/here.sty) (c:/texlive/2022/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count178
-\float@exts=\toks17
-\float@box=\box62
-\@float@everytoks=\toks18
-\@floatcapt=\box63
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def
-File: l3backend-dvipdfmx.def 2020-09-11 L3 backend support: dvipdfmx
-\g__graphics_track_int=\count179
-\l__pdf_internal_box=\box64
-\g__pdf_backend_object_int=\count180
-\g__pdf_backend_annotation_int=\count181
+\c@float@type=\count195
+\float@exts=\toks18
+\float@box=\box69
+\@float@everytoks=\toks19
+\@floatcapt=\box70
+) (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def
+File: l3backend-dvipdfmx.def 2022-10-26 L3 backend support: dvipdfmx
+\g__graphics_track_int=\count196
+\l__pdf_internal_box=\box71
+\g__pdf_backend_object_int=\count197
+\g__pdf_backend_annotation_int=\count198
+\g__pdf_backend_link_int=\count199
 ) (./specifications.aux)
 \openout1 = `specifications.aux'.
 
@@ -146,100 +147,139 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 31.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 31.
- [1]
+ [1] [2]
 File: pictures/usecase.drawio_1.png Graphic file (type bmp)
 <pictures/usecase.drawio_1.png>
- [2]
+ [3]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 86.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 86.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 86.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 86.
+
+Overfull \hbox (33.96999pt too wide) in paragraph at lines 86--131
+[][][][] 
+ []
+
+[4]
+Overfull \hbox (5.51723pt too wide) in paragraph at lines 137--170
+[][][][] 
+ []
+
+[5]
+Overfull \hbox (5.51723pt too wide) in paragraph at lines 176--212
+[][][][] 
+ []
+
+[6]
+Overfull \hbox (5.51723pt too wide) in paragraph at lines 217--236
+[][][][] 
+ []
+
+[7]
+Overfull \hbox (5.51723pt too wide) in paragraph at lines 241--284
+[][][][] 
+ []
+
+[8]
+Overfull \hbox (5.51723pt too wide) in paragraph at lines 289--327
+[][][][] 
+ []
+
+[9]
 File: pictures/pageSenni_1.png Graphic file (type bmp)
 <pictures/pageSenni_1.png>
 
-Overfull \hbox (50.78577pt too wide) in paragraph at lines 49--50
+Overfull \hbox (50.78577pt too wide) in paragraph at lines 336--337
  [] 
  []
 
-[3]
+[10]
 File: pictures/login.png Graphic file (type bmp)
 <pictures/login.png>
 File: pictures/signup.png Graphic file (type bmp)
 <pictures/signup.png>
- [4]
+ [11]
 File: pictures/index.png Graphic file (type bmp)
 <pictures/index.png>
 File: pictures/profile.png Graphic file (type bmp)
 <pictures/profile.png>
- [5]
+ [12]
 File: pictures/searchForm.png Graphic file (type bmp)
 <pictures/searchForm.png>
 File: pictures/bookForm.png Graphic file (type bmp)
 <pictures/bookForm.png>
- [6]
+ [13]
 File: pictures/commentForm.png Graphic file (type bmp)
 <pictures/commentForm.png>
 File: pictures/SysPro-ModelClassImage.png Graphic file (type bmp)
 <pictures/SysPro-ModelClassImage.png>
- [7] [8]
+ [14] [15]
 File: pictures/MVC.png Graphic file (type bmp)
 <pictures/MVC.png>
 
-Overfull \hbox (19.67433pt too wide) in paragraph at lines 121--122
+Overfull \hbox (19.67433pt too wide) in paragraph at lines 410--411
  [] 
  []
 
-[9]
+[16]
 File: pictures/sequence-graph/signup.png Graphic file (type bmp)
 <pictures/sequence-graph/signup.png>
 
-Overfull \hbox (28.70818pt too wide) in paragraph at lines 132--133
+Overfull \hbox (28.70818pt too wide) in paragraph at lines 421--422
  [] 
  []
 
 File: pictures/sequence-graph/login.png Graphic file (type bmp)
 <pictures/sequence-graph/login.png>
 
-Overfull \hbox (28.70818pt too wide) in paragraph at lines 139--140
+Overfull \hbox (28.70818pt too wide) in paragraph at lines 428--429
  [] 
  []
 
-[10]
+[17]
 File: pictures/sequence-graph/sendAboutBook.png Graphic file (type bmp)
 <pictures/sequence-graph/sendAboutBook.png>
 
-Overfull \hbox (40.7533pt too wide) in paragraph at lines 146--147
+Overfull \hbox (40.7533pt too wide) in paragraph at lines 435--436
  [] 
  []
 
-[11]
+[18]
 File: pictures/sequence-graph/watchMessages.png Graphic file (type bmp)
 <pictures/sequence-graph/watchMessages.png>
 
-Overfull \hbox (47.8213pt too wide) in paragraph at lines 153--154
+Overfull \hbox (47.8213pt too wide) in paragraph at lines 442--443
  [] 
  []
 
-[12]
+[19]
 File: pictures/sequence-graph/reaction.png Graphic file (type bmp)
 <pictures/sequence-graph/reaction.png>
 
-Overfull \hbox (28.70818pt too wide) in paragraph at lines 160--161
+Overfull \hbox (28.70818pt too wide) in paragraph at lines 449--450
  [] 
  []
 
-[13]
+[20]
 File: pictures/sequence-graph/searchBook.png Graphic file (type bmp)
 <pictures/sequence-graph/searchBook.png>
 
-Overfull \hbox (28.70818pt too wide) in paragraph at lines 167--168
+Overfull \hbox (28.70818pt too wide) in paragraph at lines 456--457
  [] 
  []
 
-[14] [15] (./specifications.aux) ) 
+[21] [22] (./specifications.aux) ) 
 Here is how much of TeX's memory you used:
- 2336 strings out of 481387
- 40838 string characters out of 5920930
- 291099 words of memory out of 5000000
- 18150 multiletter control sequences out of 15000+600000
- 542734 words of font info for 66 fonts, out of 8000000 for 9000
- 934 hyphenation exceptions out of 8191
- 39i,4n,43p,278b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 2619 strings out of 478000
+ 48407 string characters out of 5840072
+ 1856797 words of memory out of 5000000
+ 23120 multiletter control sequences out of 15000+600000
+ 520452 words of font info for 72 fonts, out of 8000000 for 9000
+ 41 hyphenation exceptions out of 8191
+ 55i,14n,63p,278b,405s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on specifications.dvi (16 pages, 5232 bytes).
+Output written on specifications.dvi (23 pages, 19012 bytes).
