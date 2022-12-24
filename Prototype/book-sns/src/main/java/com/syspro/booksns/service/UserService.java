@@ -20,7 +20,7 @@ public class UserService {
 		return mapper.selectAll();
 	}
 	
-	public User selectByPrimaryKey(Long userId) {
+	public User selectByPrimaryKey(String userId) {
 		return mapper.selectByPrimaryKey(userId);
 	}
 	
@@ -29,7 +29,7 @@ public class UserService {
 		else mapper.updateByPrimaryKey(user);
 	}
 	
-	public int deleteByPrimaryKey(Long userId) {
+	public int deleteByPrimaryKey(String userId) {
 		return mapper.deleteByPrimaryKey(userId);
 	}
 }

@@ -11,13 +11,13 @@
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO users(name, profile)
-		VALUES(#{name}, #{profile})
+		INSERT INTO users(user_id, password, name, profile)
+		VALUES(#{userId}, #{password}, #{name}, #{profile})
 	</insert>
 	
 	<update id="updateByPrimaryKey">
 		UPDATE users
-		SET name = #{name}, profile = #{profile}
+		SET name = #{name}, profile = #{profile}, password = #{password}
 		WHERE user_id = #{userId}
 	</update>
 	

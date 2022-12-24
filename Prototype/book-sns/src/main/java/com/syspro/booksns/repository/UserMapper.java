@@ -10,11 +10,11 @@ import com.syspro.booksns.model.User;
 public interface UserMapper {
 	List<User> selectAll();
 	
-	User selectByPrimaryKey(Long id);
+	User selectByPrimaryKey(String userId);
 	
 	int insert(User record);
 	
 	int updateByPrimaryKey(User record);
 	
-	int deleteByPrimaryKey(Long id);
+	int deleteByPrimaryKey(String userId);
 }

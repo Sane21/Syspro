@@ -53,8 +53,8 @@ public class HomeController {
 			return "bookForm";
 		}
 		
-		book.setEditor(userService.selectByPrimaryKey(Long.valueOf(3)));
-		bookService.save(book);
+		//book.setEditor(userService.selectByPrimaryKey(Long.valueOf(3)));
+		//bookService.save(book);
 		return "redirect:/";
 	}
 }
