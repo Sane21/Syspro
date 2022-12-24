@@ -24,9 +24,20 @@ public class UserService {
 		return mapper.selectByPrimaryKey(userId);
 	}
 	
-	public void save(User user) {
-		if(user.getUserId() == null) mapper.insert(user);
-		else mapper.updateByPrimaryKey(user);
+	public boolean insert(User user) {
+		//既に同じIDのユーザがいる場合は使用不可に
+		if(mapper.selectByPrimaryKey(user.getUserId()) != null) {
+			return false;
+		}
+		mapper.insert(user);
+		return true;
+	}
+	
+	public int updateByPrimaryKey(User user) {
+		if(user.getUserId() != null) {
+			return -1;
+		}
+		return mapper.updateByPrimaryKey(user);
 	}
 	
 	public int deleteByPrimaryKey(String userId) {
