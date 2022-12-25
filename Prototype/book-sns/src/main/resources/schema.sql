@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS users ( 
 	user_id VARCHAR(32) PRIMARY KEY,
 	name VARCHAR(60) NOT NULL,
-	password VARCHAR(20) NOT NULL,
+	password VARCHAR(2058) NOT NULL,
 	profile VARCHAR(1024)
 );
 

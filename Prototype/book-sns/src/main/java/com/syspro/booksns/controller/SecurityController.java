@@ -1,5 +1,6 @@
 package com.syspro.booksns.controller;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -17,6 +18,12 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class SecurityController {
 	private final UserService userService;
+	private final PasswordEncoder passwordEncoder;
+	
+	@GetMapping("/login")
+	public String login() {
+		return "sample_login";
+	}
 	
 	@GetMapping("/signup")
 	public String signup(@ModelAttribute RegisterForm registerForm) {
@@ -31,7 +38,8 @@ public class SecurityController {
 		user.setUserId(registerForm.getUserId());
 		if(registerForm.getName() == "") user.setName("No name");
 		else user.setName(registerForm.getName());
-		user.setPassword(registerForm.getPassword());
+		String encodePass = passwordEncoder.encode(registerForm.getPassword());
+		user.setPassword(encodePass);
 		userService.insert(user);
 		
 		return "redirect:/";

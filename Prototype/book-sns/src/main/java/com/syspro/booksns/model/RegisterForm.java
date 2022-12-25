@@ -20,13 +20,13 @@ public class RegisterForm {
 	private String userId;
 	
 	@NotBlank
-	@Size(max = 20, min = 8)
+	@Size(max = 20, min = 6)
 	@Pattern(regexp="[0-9a-zA-Z!_,.@~`!#^\\-*()+={}\\[\\]|:;]+")
 	private String password;
 	
 	
 	@NotBlank
-	@Size(max = 20, min = 8)
+	@Size(max = 20, min = 6)
 	@Pattern(regexp="[0-9a-zA-Z!_,.@~`!#^\\-*()+={}\\[\\]|:;]+")
 	private String passwordConfirm;
 	
