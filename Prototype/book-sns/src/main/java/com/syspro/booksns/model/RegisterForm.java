@@ -29,8 +29,7 @@ public class RegisterForm {
 	@Size(max = 20, min = 6)
 	@Pattern(regexp="[0-9a-zA-Z!_,.@~`!#^\\-*()+={}\\[\\]|:;]+")
 	private String passwordConfirm;
-	
-	@NotBlank //文字列がnullか空文字、空白でないかを検証
+
 	@Size(max = 60) //文字列の最大長は60文字
 	private String name;
 	
