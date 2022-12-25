@@ -4,6 +4,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.syspro.booksns.validator.UniqueLogin;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,6 +15,7 @@ public class User {
 	@NotBlank
 	@Size(max = 32, min = 5)
 	@Pattern(regexp="[0-9a-zA-Z!_,.@~`!#^\\-*()+={}\\[\\]|:;]+")
+	@UniqueLogin
 	private String userId;
 	
 	@NotBlank
