@@ -1,5 +1,8 @@
 package com.syspro.booksns.controller;
 
+import java.util.List;
+
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,8 +29,8 @@ public class HomeController {
 
 	@GetMapping("/")
 	@ResponseBody
-	public String index() {
-		return "Hello";
+	public List<Book> index() {
+		return bookService.selectAll();
 	}
 	
 //	@GetMapping("/test")
@@ -48,13 +51,14 @@ public class HomeController {
 	}
 	
 	@PostMapping("/add")
-	public String postBook(@Validated @ModelAttribute Book book, BindingResult result) {
+	public String postBook(@Validated @ModelAttribute Book book, BindingResult result,
+			Authentication loginUser) {
 		if(result.hasErrors()) { //バリデーションチェックの部分
 			return "bookForm";
 		}
-		
-		//book.setEditor(userService.selectByPrimaryKey(Long.valueOf(3)));
-		//bookService.save(book);
+		String userId = loginUser.getName();
+		book.setEditor(userService.selectByPrimaryKey(userId));
+		bookService.save(book);
 		return "redirect:/";
 	}
 }
