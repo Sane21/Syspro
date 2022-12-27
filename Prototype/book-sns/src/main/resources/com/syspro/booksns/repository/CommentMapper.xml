@@ -12,7 +12,7 @@
 	
 	<insert id="insert">
 		INSERT INTO comments(target_book_id, edit_user_id, content, published_date)
-		VALUES(#{targetBook.bookId}, #{editUser.user_id}, #{content}, CURRENT_TIME)
+		VALUES(#{targetBook.bookId}, #{editUser.userId}, #{content}, CURRENT_TIME)
 	</insert>
 	
 	<update id="updateByPrimaryKey">
@@ -55,7 +55,7 @@
 		SELECT users.*
 		FROM comments
 		INNER JOIN users
-		ON comments.comment_id = users.user_id
-		WHERE comments.comment_id = #{id}
+		ON comments.edit_user_id = users.user_id
+		WHERE comments.edit_user_id = #{id}
 	</select>
 </mapper>

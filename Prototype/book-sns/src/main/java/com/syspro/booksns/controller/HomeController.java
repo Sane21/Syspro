@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.syspro.booksns.model.Book;
+import com.syspro.booksns.model.Comment;
 import com.syspro.booksns.service.BookService;
 import com.syspro.booksns.service.CommentService;
 import com.syspro.booksns.service.UserService;
@@ -51,6 +52,21 @@ public class HomeController {
 		String userId = loginUser.getName();
 		book.setEditor(userService.selectByPrimaryKey(userId));
 		bookService.save(book);
+		return "redirect:/";
+	}
+	
+	@GetMapping("/comment")
+	public String addComment(@ModelAttribute Comment comment) {
+		return "commentForm";
+	}
+	
+	@PostMapping("/comment")
+	public String postComment(@Validated @ModelAttribute Comment comment, BindingResult result,
+			Authentication loginUser) {
+		if(result.hasErrors()) return "commentForm";
+		String editorId = loginUser.getName();
+		comment.setEditUser(userService.selectByPrimaryKey(editorId));
+		commentService.save(comment);
 		return "redirect:/";
 	}
 }

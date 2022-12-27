@@ -23,7 +23,7 @@
                                         <span class="badge bg-danger">必須</span>
                                         書名
                                     </label>
-                                    <input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{name}">
+                                    <input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{name}" placeholder="ex) 吾輩は猫である">
                                     <div class="invalid-feedback" th:errors="*{name}"></div>
                                 </div>
     
@@ -31,9 +31,9 @@
                                 <div class="mb-3 inputform">
                                     <label for="book_isbn" class="form-label">
                                         <span class="badge bg-danger">必須</span>
-                                        ISBN
+                                        ISBN(10桁か13桁)
                                     </label>
-                                    <input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{ISBN}">
+                                    <input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{ISBN}" placeholder="ハイフンなしで入力 ex)9784478016602">
                                     <div class="invalid-feedback" th:errors="*{ISBN}"></div>
                                 </div>
     
@@ -43,7 +43,7 @@
                                         <span class="badge bg-danger">必須</span>
                                         著者名
                                     </label>
-                                    <input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{author}">
+                                    <input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{author}" placeholder="近大 太郎">
                                     <div class="invalid-feedback" th:errors="*{author}"></div>
                                 </div>
                             </div>

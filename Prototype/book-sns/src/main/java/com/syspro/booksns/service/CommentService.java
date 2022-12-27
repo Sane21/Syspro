@@ -39,7 +39,7 @@ public class CommentService {
 		return mapper.selectBook(record);
 	}
 	
-	public User selectUser(Comment record) {
-		return mapper.selectUser(record);
+	public User selectUser(Long id) {
+		return mapper.selectUser(id);
 	}
 }
