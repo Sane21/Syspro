@@ -34,3 +34,10 @@
 	margin-right: 100px;
 	padding-bottom: 40px;
 }
+
+.loginBtn{
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 30px;
+	padding-right: 30px;
+}

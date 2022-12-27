@@ -7,58 +7,62 @@
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
 <!-- アイコン読み込み -->
 <link th:href="@{/webjars/bootstrap-icons/font/bootstrap-icons.css}" rel="stylesheet">
+<link th:href="@{css/style.css}" rel="stylesheet">
 <title>新規登録ページ</title>
 </head>
 <body>
 	<div class="container pt-4">
-		<div class="row justify-content-center">
-			<div class="card shadow" style="max-width: 480px;">
+		<div class="row justify-content-center formpos">
+			<div class="card shadow text-center" style="max-width: 480px;">
 				<div class="card-body">
 					<h3 class="card-title mb-3 text-center text-navy">ユーザ登録</h3>
 					
 					<form th:action="@{/signup}" th:object="${registerForm}" method="post" novalidate>
-						<div class="mb-3">
-							<label for="userid" class="form-label">
-								<span class="badge bg-danger">必須</span>
-								ユーザID
-							</label>
-							<input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{userId}">
-							<div class="invalid-feedback" th:errors="*{userId}"></div>
-						</div>
-						
-						<div class="mb-3">
-							<label for="password" class="form-label">
-								<span class="badge bg-danger">必須</span>
-								パスワード
-							</label>
-							<div class="input-group">
-								<input class="form-control" type="password" th:errorclass="is-invalid" th:field="*{password}">
-								<a class="btn btn-secondary" id="eyebtn">
-									<i class="bi bi-eye-fill" id="eye"></i>
-								</a>
-								<div class="invalid-feedback" th:errors="*{password}"></div>
+						<div class="lefttext">
+
+							<div class="mb-3">
+								<label for="userid" class="form-label">
+									<span class="badge bg-danger">必須</span>
+									ユーザID
+								</label>
+								<input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{userId}">
+								<div class="invalid-feedback" th:errors="*{userId}"></div>
+							</div>
+							
+							<div class="mb-3">
+								<label for="password" class="form-label">
+									<span class="badge bg-danger">必須</span>
+									パスワード
+								</label>
+								<div class="input-group">
+									<input class="form-control" type="password" th:errorclass="is-invalid" th:field="*{password}">
+									<a class="btn btn-secondary" id="eyebtn">
+										<i class="bi bi-eye-fill" id="eye"></i>
+									</a>
+									<div class="invalid-feedback" th:errors="*{password}"></div>
+								</div>
+							</div>
+							
+							<div class="mb-3">
+								<label for="password" class="form-label">
+									<span class="badge bg-danger">必須</span>
+									パスワード(再確認)
+								</label>
+								
+								<input class="form-control" type="password" th:errorclass="is-invalid" th:field="*{passwordConfirm}">
+								<div class="invalid-feedback" th:errors="*{passwordValid}" th:if="${#fields.hasErrors('passwordValid')}"></div>
+							</div>
+							
+							<div class="mb-3">
+								<label for="nickname" class="form-label">
+									Username
+								</label>
+								<input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{name}">
+								<div class="invalid-feedback" th:errors="*{name}"></div>
 							</div>
 						</div>
 						
-						<div class="mb-3">
-							<label for="password" class="form-label">
-								<span class="badge bg-danger">必須</span>
-								パスワード(再確認)
-							</label>
-							
-							<input class="form-control" type="password" th:errorclass="is-invalid" th:field="*{passwordConfirm}">
-							<div class="invalid-feedback" th:errors="*{passwordValid}" th:if="${#fields.hasErrors('passwordValid')}"></div>
-						</div>
-						
-						<div class="mb-3">
-							<label for="nickname" class="form-label">
-								Username
-							</label>
-							<input class="form-control" type="text" th:errorclass="is-invalid" th:field="*{name}">
-							<div class="invalid-feedback" th:errors="*{name}"></div>
-						</div>
-						
-						<button class="w-100 btn btn-navy" type="submit">登録</button>
+						<button class="btn btn-primary rounded-pill loginBtn" type="submit">登録</button>
 					</form>
 				</div>
 			</div>
