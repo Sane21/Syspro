@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.postbook {
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-color: #66CC66;
+	color: #FFFFEE;
+	margin-left: auto;
+	margin-bottom: 10px;
+}
+
+.postbook:hover{
+	color: #FFFFDD;
+	background-color: #5BFF7F;
+}
+
+.myform {
+	text-align: center;
+}
+
+.lefttext {
+	text-align: left;
+}
+
+.formpos {
+	padding-top: 100px;
+
+}
+
+.inputform {
+	margin-left: 100px;
+	margin-right: 100px;
+	padding-bottom: 40px;
+}

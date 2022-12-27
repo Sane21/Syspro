@@ -34,7 +34,7 @@ public class BookService {
 		return mapper.deleteByPrimaryKey(bookId);
 	}
 	
-	public User selectUser(Long id) {
+	public User selectUser(String id) {
 		return mapper.selectUser(id);
 	}
 }

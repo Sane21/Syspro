@@ -40,6 +40,6 @@
 		FROM book
 		INNER JOIN users
 		ON book.editor_id = users.user_id
-		WHERE book.book_id = #{id}
+		WHERE book.editor_id = #{id}
 	</select>
 </mapper>

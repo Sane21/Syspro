@@ -19,5 +19,5 @@ public interface BookMapper {
 	
 	int deleteByPrimaryKey(Long id);
 	
-	User selectUser(Long id);
+	User selectUser(String id);
 }
