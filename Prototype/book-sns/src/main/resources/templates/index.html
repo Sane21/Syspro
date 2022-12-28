@@ -2,18 +2,44 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{layout/layout}">
 <head>
 <meta charset="UTF-8" th:remove="tag">
+<link th:href="@{css/style.css}" rel="stylesheet">
+<script th:src="@{js/script.js}"></script>
+<script th:inline="javascript">
+    const books = /*[[${books}]]*/"books";
+    show();
+</script>
 <title>トップページ</title>
 </head>
 <body>
-    <div layout:fragment="content" class="container-fluid">
+    <div layout:fragment="content" class="container-fluid" style="padding-top: 5%">
         <th:block th:each="book : ${books}" th:object="${book}" th:if="${books.size > 0}">
-            <div class="row">
-                <p th:text="*{title}"></p>
-                <p th:text="*{author}"></p>
-                <p th:text="*{ISBN}"></p>
-                <p th:text="*{lastEditDate}"></p>
-                <p th:text="*{editor.userId}"></p>
-                <p th:text="*{editor.name}"></p>
+            <div class="row cardlayout">
+                <div class="card mb-3 mx-1">
+                    <div class="card-body">
+                        <div>
+                            <p class="card-title font-weit-bold h4" th:text="*{editor.name}"></p>
+                            <p class="card-subtitle" th:text="|@*{editor.userId}|"></p>
+                        </div>
+                        <div class="card-text">
+                            <div class="row">
+                                <div class="col cardcontent">
+                                    <p>私のおすすめの本はこれ！</p>
+                                    <p th:text="|書名：*{title}|"></p>
+                                    <p th:text="|著者：*{author}|"></p>
+                                    <p th:text="*{lastEditDate}" style="font-size: 15px"></p>
+                                </div>
+    
+                                <div class="col">
+                                    <img th:src="|https://iss.ndl.go.jp/thumbnail/*{ISBN}|" class="img-fluid float-end"
+                                    onerror="this.onerror=null;this.src='https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage-760x460.png';">
+                                </div>
+                            </div>
+                            <div class="row bs-callout-success bs-callout">
+                                <p th:id="*{bookId}"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </th:block>
     </div>
