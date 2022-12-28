@@ -20,7 +20,7 @@ public class Book {
 	
 	@NotBlank
 	@Size(max = 1024)
-	private String name;
+	private String title;
 	
 	@NotBlank
 	@Size(max =1024)

@@ -8,10 +8,12 @@
     <div layout:fragment="content" class="container-fluid">
         <th:block th:each="book : ${books}" th:object="${book}" th:if="${books.size > 0}">
             <div class="row">
-                <p th:text="*{name}"></p>
+                <p th:text="*{title}"></p>
                 <p th:text="*{author}"></p>
                 <p th:text="*{ISBN}"></p>
                 <p th:text="*{lastEditDate}"></p>
+                <p th:text="*{editor.userId}"></p>
+                <p th:text="*{editor.name}"></p>
             </div>
         </th:block>
     </div>

@@ -40,6 +40,12 @@ public class HomeController {
 		return bookService.selectAll();
 	}
 	
+	@GetMapping("/test2")
+	@ResponseBody
+	public List<Comment> test2() {
+		return commentService.selectAll();
+	}
+	
 	@GetMapping("/add")
 	public String addBook(@ModelAttribute Book book) {
 		return "bookForm";
