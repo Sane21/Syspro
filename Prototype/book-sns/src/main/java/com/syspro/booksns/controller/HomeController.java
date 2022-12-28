@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,16 +28,17 @@ public class HomeController {
 	private final CommentService commentService;
 
 	@GetMapping("/")
-	@ResponseBody
-	public List<Book> index() {
-		return bookService.selectAll();
+	public String index(Model model) {
+		model.addAttribute("books", bookService.selectAll());
+		return "index";
 	}
 	
-//	@GetMapping("/test")
-//	public String test(Model model) {
-//		model.addAttribute("users", userService.selectAll());
-//		return "index";
-//	}
+	
+	@GetMapping("/test")
+	@ResponseBody
+	public List<Book> test() {
+		return bookService.selectAll();
+	}
 	
 	@GetMapping("/add")
 	public String addBook(@ModelAttribute Book book) {
