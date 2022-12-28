@@ -19,13 +19,13 @@ public class User {
 	private String userId;
 	
 	@NotBlank
-	@Size(max = 1024)
+	@Size(max = 2048)
 	@Pattern(regexp="[0-9a-zA-Z!_,.@~`!#^\\-*()+={}\\[\\]|:;]+")
 	private String password;
 	
 	@Size(max = 60) //文字列の最大長は60文字
 	private String name;
 	
-	@Size(max =1024)
+	@Size(max =512)
 	private String profile;
 }

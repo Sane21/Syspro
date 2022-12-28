@@ -23,11 +23,11 @@ public class Book {
 	private String title;
 	
 	@NotBlank
-	@Size(max =1024)
+	@Size(max =64)
 	private String author;
 	
 	@NotBlank
-	@Pattern(regexp="((\\d{13})|(\\d{10}))")
+	@Pattern(regexp="\\d{13}")
 	private String ISBN;
 	
 	@DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
