@@ -6,6 +6,8 @@
 		FROM book
 		INNER JOIN users
 		ON book.editor_id = users.user_id
+		ORDER BY book.last_edit_date DESC
+		LIMIT 10
 	</select>
 	
 	<select id="selectByPrimaryKey" resultMap="book">
