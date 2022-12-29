@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{layout/layout}"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8" th:remove="tag">
-<link th:href="@{css/style.css}" rel="stylesheet">
+<link th:href="@{/css/style.css}" rel="stylesheet">
 <script th:src="@{js/script.js}"></script>
 <script th:inline="javascript">
     const books = /*[[${books}]]*/"books";
@@ -16,9 +17,51 @@
             <div class="row cardlayout">
                 <div class="card mb-3 mx-1">
                     <div class="card-body">
-                        <div>
-                            <p class="card-title font-weit-bold h4" th:text="*{editor.name}"></p>
-                            <p class="card-subtitle" th:text="|@*{editor.userId}|"></p>
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="card-title font-weit-bold h4" th:text="*{editor.name}"></p>
+                                <p class="card-subtitle" th:text="|@*{editor.userId}|"></p>
+                            </div>
+                            <th:block th:if="${#authentication.principal.username} eq *{editor.userId}">
+                                <div class="col text-end">
+                                    <a th:href="@{/edit/{id}(id=*{bookId})}" class="mybutton btn">
+                                        <i class="bi bi-pencil-square"></i>
+                                        編集
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <button class="mybutton btn" data-bs-toggle="modal" th:data-bs-target="|#modal*{bookId}|">
+                                        <i class="bi bi-trash"></i>
+                                        削除
+                                    </button>
+
+                                    <div class="modal fade" th:id="|modal*{bookId}|" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+                                    aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="modalLabel">確認</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <!-- モーダルの本文 -->
+                                                <div class="modal-body">
+                                                    本当に削除しますか？
+                                                </div>
+                                                <!-- モーダルのフッター -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+                                                    <a th:href="@{/delete/{id}(id=*{bookId})}" class="btn btn-danger col-auto">
+                                                        <i class="bi bi-trash"></i>
+                                                        削除
+                                                    </a>							
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            </th:block>
+    
                         </div>
                         <div class="card-text">
                             <div class="row">

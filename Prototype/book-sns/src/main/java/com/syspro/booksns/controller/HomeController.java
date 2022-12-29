@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -60,6 +61,23 @@ public class HomeController {
 		String userId = loginUser.getName();
 		book.setEditor(userService.selectByPrimaryKey(userId));
 		bookService.save(book);
+		return "redirect:/";
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String editBook(@PathVariable Long id, Model model) {
+		Book book = bookService.selectByPrimaryKey(id);
+		model.addAttribute("book", book);
+		return "bookForm";
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String deleteBook(@PathVariable Long id, Authentication loginUser) {
+		Book book = bookService.selectByPrimaryKey(id);
+		//ユーザIDと投稿者が同じじゃなきゃ削除できない
+		if(loginUser.getName().equals(book.getEditor().getUserId())){
+			bookService.deleteByPrimaryKey(id);			
+		}
 		return "redirect:/";
 	}
 	

@@ -10,6 +10,10 @@ function show(){
 		content = json[0].onix.CollateralDetail.TextContent[0];
 		let pElement = document.getElementById(book.bookId);
 		pElement.innerText = content.Text;
+		if(content.Text.length <= 60) { //ひとつめの要素の説明が短すぎるときは、次のやつの説明も追加
+			addContent = json[0].onix.CollateralDetail.TextContent[1];
+			pElement.innerText += addContent.Text;
+		}
 	})
 	.catch(e => {
 		console.log(e);

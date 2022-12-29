@@ -6,6 +6,7 @@
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
 <!-- アイコン読み込み -->
 <link th:href="@{/webjars/bootstrap-icons/font/bootstrap-icons.css}" rel="stylesheet">
+<link th:href="@{/css/style.css}" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <!--ひな型 ここにヘッダー、コンテンツ、フッターの並びとかを記述する-->
@@ -35,6 +36,13 @@
 					<li class="nav-item">
 						<a class="nav-link active" th:href="@{/logout}">
 						ログアウト
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link active btn post-book-button" th:href="@{/add}">
+							<i class="bi bi-pencil"></i>
+							投稿する
 						</a>
 					</li>
 				</ul>

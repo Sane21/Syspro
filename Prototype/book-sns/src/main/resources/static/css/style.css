@@ -108,3 +108,22 @@
 .bs-callout-info h4 {
     color: #5bc0de;
 }
+
+.mybutton {
+	background-color: white;
+	border: 2px solid gray;
+	border-radius: 3px;
+}
+
+.mybutton:hover {
+	background-color: #CCCCCC;
+}
+
+.post-book-button {
+	border: 2px solid white;
+	border-radius:  3px;;
+}
+
+.post-book-button:hover {
+	background-color: #197040;
+}

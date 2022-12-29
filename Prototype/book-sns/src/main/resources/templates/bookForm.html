@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{layout/layout}">
 <head>
 <meta charset="UTF-8" th:remove="tag">
-<link th:href="@{css/style.css}" rel="stylesheet">
+<link th:href="@{/css/style.css}" rel="stylesheet">
 <!-- bootstrap読込 -->
 <title>技術書投稿ページ</title>
 </head>
@@ -47,7 +47,7 @@
                                     <div class="invalid-feedback" th:errors="*{author}"></div>
                                 </div>
                             </div>
-                            <button class="btn rounded-pill postbook" type="submit">新規登録</button>
+                            <button class="btn rounded-pill postbook" type="submit">登録</button>
                         </form>
     
                     </div>
