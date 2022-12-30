@@ -37,4 +37,8 @@ public class BookService {
 	public User selectUser(String id) {
 		return mapper.selectUser(id);
 	}
+	
+	public List<Book> selectByTitle(String title){
+		return mapper.selectByTitle(title);
+	}
 }

@@ -20,4 +20,6 @@ public interface BookMapper {
 	int deleteByPrimaryKey(Long id);
 	
 	User selectUser(String id);
+	
+	List<Book> selectByTitle(String title);
 }

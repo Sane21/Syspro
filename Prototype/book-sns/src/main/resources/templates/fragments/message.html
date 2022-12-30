@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 参照先をリンクURL式「@{...}」で指定  -->
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+    <div th:fragment="login">
+    <!-- ${param}でリクエストパラメータ保持 -->
+        <div class="alert alert-danger" th:if="${param.error}">
+            <small>ユーザ名またはパスワードが正しくありません</small>
+        </div>
+        <div class="alert alert-success" th:if="${param.register}">
+            <small>ユーザを新規登録しました</small>
+        </div>
+        <div class="alert alert-success" th:if="${param.logout}">
+            <small>ログアウトしました</small>
+        </div>
+        <div class="alert alert-danger" th:if="${param.unique}">
+            <small>既に使われているユーザIDです</small>
+        </div>
+    </div>
+
+    <div th:fragment="search">
+        <div class="alert alert-success message" th:if="${param.word} and ${books.size > 0}">
+            <small th:text="|${books.size}件の検索結果が見つかりました|"></small>
+        </div>
+        <div class="alert alert-danger message" th:if="${books.size} eq 0">
+            <small th:text="|${param.word}を含む投稿は見つかりませんでした。|"></small>
+        </div>
+    </div>
+</body>
+</html>

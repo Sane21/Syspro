@@ -14,11 +14,16 @@ function show(){
 			addContent = json[0].onix.CollateralDetail.TextContent[1];
 			pElement.innerText += addContent.Text;
 		}
+		let img = json[0].onix.CollateralDetail.SupportingResource[0].ResourceVersion[0].ResourceLink;
+		let imgElement = document.getElementById("img" + book.bookId);
+		imgElement.src = img;
+		
 	})
 	.catch(e => {
-		console.log(e);
 		let errorElement = document.getElementById(book.bookId);
 		errorElement.innerText = 'APIから情報を取得できませんでした';
+		let imgElement = document.getElementById("img" + book.bookId);
+		imgElement.src = 'https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage-760x460.png';
 	})
 	
 		

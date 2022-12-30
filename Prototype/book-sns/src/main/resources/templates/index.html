@@ -13,6 +13,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 </head>
 <body>
     <div layout:fragment="content" class="container-fluid" style="padding-top: 5%">
+        <div th:replace="~{fragments/message :: search}"></div>
         <th:block th:each="book : ${books}" th:object="${book}" th:if="${books.size > 0}">
             <div class="row cardlayout">
                 <div class="card mb-3 mx-1">
@@ -73,8 +74,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                                 </div>
     
                                 <div class="col">
-                                    <img th:src="|https://iss.ndl.go.jp/thumbnail/*{ISBN}|" class="img-fluid float-end"
-                                    onerror="this.onerror=null;this.src='https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage-760x460.png';">
+                                    <img th:id="|img*{bookId}|" class="img-fluid float-end">
                                 </div>
                             </div>
                             <div class="row bs-callout-success bs-callout">

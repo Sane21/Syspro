@@ -1,7 +1,5 @@
 package com.syspro.booksns.controller;
 
-import java.util.List;
-
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.syspro.booksns.model.Book;
 import com.syspro.booksns.model.Comment;
@@ -34,17 +32,10 @@ public class HomeController {
 		return "index";
 	}
 	
-	
-	@GetMapping("/test")
-	@ResponseBody
-	public List<Book> test() {
-		return bookService.selectAll();
-	}
-	
-	@GetMapping("/test2")
-	@ResponseBody
-	public List<Comment> test2() {
-		return commentService.selectAll();
+	@GetMapping("/result")
+	public String searchResult(@RequestParam(defaultValue = " ") String word, Model model) {
+		model.addAttribute("books", bookService.selectByTitle(word));
+		return "index";
 	}
 	
 	@GetMapping("/add")
@@ -94,5 +85,10 @@ public class HomeController {
 		comment.setEditUser(userService.selectByPrimaryKey(editorId));
 		commentService.save(comment);
 		return "redirect:/";
+	}
+	
+	@GetMapping("/search")
+	public String search() {
+		return "searchForm";
 	}
 }

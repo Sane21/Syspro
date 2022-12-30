@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8" th:remove="tag">
+<link th:href="@{css/style.css}" rel="stylesheet">
+<title>検索フォーム</title>
+</head>
+<body class="bg-light h-100 vstack">
+    <div layout:fragment="content" class="container-fluid">
+        <div class="container formpos">
+            <div class = "row align-items-center justify-content-center mx-4">
+                <div class ="card shadow">
+                    <div class ="card-body">
+                        <h3 class="card-title mb-3 text-center text-navy">投稿を検索</h3>
+                        <form th:action="@{/result}" class="myform">
+                            <div class="lefttext"> 
+                                <div class="mb-3 inputform">
+                                    <label for="book_name" class="form-label">
+                                        検索ワード
+                                    </label>
+                                    <input class="form-control" type="text" name="word">
+                                </div>
+                            </div>
+                            <button class="btn rounded-pill postbook" type="submit">検索する</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

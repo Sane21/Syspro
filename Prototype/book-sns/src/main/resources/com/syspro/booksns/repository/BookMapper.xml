@@ -49,4 +49,14 @@
 		ON book.editor_id = users.user_id
 		WHERE book.editor_id = #{id}
 	</select>
+	
+	<select id="selectByTitle" resultMap="book">
+		SELECT *
+		FROM book
+		INNER JOIN users
+		ON book.editor_id = users.user_id
+		WHERE book.title LIKE CONCAT('%', #{title}, '%')
+		ORDER BY book.last_edit_date DESC
+		LIMIT 10
+	</select>
 </mapper>

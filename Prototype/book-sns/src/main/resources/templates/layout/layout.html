@@ -7,13 +7,12 @@
 <!-- アイコン読み込み -->
 <link th:href="@{/webjars/bootstrap-icons/font/bootstrap-icons.css}" rel="stylesheet">
 <link th:href="@{/css/style.css}" rel="stylesheet">
-<title>Insert title here</title>
 </head>
 <!--ひな型 ここにヘッダー、コンテンツ、フッターの並びとかを記述する-->
 <body class="bg-light h-100 vstack">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top" id="navbar">
-		<div class="container">
-			<a class="navbar-brand" href="/">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top" id="navbar" role="navigation">
+		<div class="container-fluid">
+			<a class="navbar-brand ms-3" href="/">
 				<i class="bi bi-book"></i>
 				技術書 SNS
 			</a>
@@ -26,7 +25,7 @@
 			
 			<!-- リンク一覧 -->
 			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto">
+				<ul class="navbar-nav ms-auto me-5">
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" th:href="@{/}">
 						ホームへ
@@ -39,13 +38,23 @@
 						</a>
 					</li>
 
-					<li class="nav-item">
+					<li class="nav-item me-2">
 						<a class="nav-link active btn post-book-button" th:href="@{/add}">
 							<i class="bi bi-pencil"></i>
 							投稿する
 						</a>
 					</li>
+
+					<li class="nav-item">
+						<a class="nav-link active btn post-book-button" th:href="@{/search}">
+							<i class="bi bi-search"></i>
+							検索する
+						</a>
+					</li>
 				</ul>
+				<div class="row">
+					
+				</div>
 			</div>
 			
 		</div>

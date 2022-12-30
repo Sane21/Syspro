@@ -127,3 +127,8 @@
 .post-book-button:hover {
 	background-color: #197040;
 }
+
+.message {
+	margin-left: 25%;
+	margin-right: 25%;
+}
