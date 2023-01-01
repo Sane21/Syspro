@@ -4,7 +4,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8" th:remove="tag">
 <link th:href="@{/css/style.css}" rel="stylesheet">
-<script th:src="@{js/script.js}"></script>
+<script th:src="@{/js/script.js}"></script>
 <script th:inline="javascript">
     const books = /*[[${books}]]*/"books";
     replace();
@@ -13,6 +13,9 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 </head>
 <body>
     <div layout:fragment="content" class="container-fluid" style="padding-top: 5%">
+        <div id="push">
+            
+        </div>
         <div th:replace="~{fragments/message :: search}"></div>
         <th:block th:each="book : ${books}" th:object="${book}" th:if="${books.size > 0}">
             <div class="row cardlayout">

@@ -132,3 +132,29 @@
 	margin-left: 25%;
 	margin-right: 25%;
 }
+
+.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 40%;
+	margin-top: 10%;
+	animation: anim 1s forwards;
+	z-index: 100;
+}
+
+@keyframes anim {
+	0% {
+		transform: translateX(-20%);
+	}
+	
+	100% {
+		transform: translateX(10%);
+	}
+}
+
+.reload {
+	cursor: pointer;
+	margin-left: 2%;
+	text-decoration: underline;;
+}

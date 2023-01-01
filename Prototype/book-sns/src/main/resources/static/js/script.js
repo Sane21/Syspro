@@ -1,9 +1,12 @@
 'use strict;'
 
+let stompClient = null;
+let count = 0;
+
 function replace(){
 	window.addEventListener("load", () => {
+		prevBooks = books;
 		books.forEach(book => {
-			console.log(book.bookId);
 			let pElement = document.getElementById(book.bookId);
 			if(book.detail != null){
 				let after = book.detail.replace(/(\r\n|\n|\r)/gm, '<br>');
@@ -13,6 +16,43 @@ function replace(){
 		
 	});
 }
+
+//WebSocketで画面を遷移なしで更新
+function connect(){
+	let socket = new SockJS("/client");//endpoint
+	stompClient = Stomp.over(socket);
+
+	let element = document.getElementById("push");
+	stompClient.connect({}, () => {
+		stompClient.subscribe("/topic/users", () => {
+			count++;
+			while(element.lastChild) element.removeChild(element.lastChild);
+			element.classList.add("alert", "alert-info", "fixed");
+			let icon = document.createElement("i");
+			icon.classList.add("bi", "bi-bell");
+			element.appendChild(icon);
+			let small = document.createElement("small");
+			small.innerText = "新しい投稿が" + count + "件あります."
+			
+			let reload = document.createElement("a");
+			reload.innerText = "更新"
+			
+			
+			reload.addEventListener("click", () => {
+				location.reload();
+			})
+			
+			reload.classList.add("reload");
+			element.appendChild(small);
+			element.appendChild(reload);
+			
+		});
+	});
+}
+
+window.addEventListener("load", () => {
+	connect();
+});
 
 /**
 function show(){

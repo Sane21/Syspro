@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" th:remove="tag">
 <link th:href="@{/css/style.css}" rel="stylesheet">
+<script th:src="@{/js/update.js}"></script>
 <!-- bootstrap読込 -->
 <title>技術書投稿ページ</title>
 </head>
@@ -15,7 +16,7 @@
                 <div class ="card shadow">
                     <div class ="card-body">
                         <h3 class="card-title mb-3 text-center text-navy">技術書登録</h3>
-                        <form th:action="@{/add}" th:object="${book}" method="post" novalidate class="myform">
+                        <form th:action="@{/add}" th:object="${book}" method="post" novalidate class="myform" id="form">
                             <div class="lefttext"> 
                                 <input type="hidden" th:field="*{bookId}">
                                 <div class="mb-3 inputform">
