@@ -7,7 +7,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <script th:src="@{js/script.js}"></script>
 <script th:inline="javascript">
     const books = /*[[${books}]]*/"books";
-    show();
+    replace();
 </script>
 <title>トップページ</title>
 </head>
@@ -74,11 +74,19 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                                 </div>
     
                                 <div class="col">
-                                    <img th:id="|img*{bookId}|" class="img-fluid float-end">
+                                    <!--
+                                        
+                                    -->
+                                    <img class="img-fluid float-end" th:if="*{url} eq null" src="https://www.shoshinsha-design.com/wp-content/uploads/2020/05/noimage-760x460.png">
+                                    <img  class="img-fluid float-end" th:if="*{url} neq null" th:src="*{url}">
                                 </div>
                             </div>
                             <div class="row bs-callout-success bs-callout">
-                                <p th:id="*{bookId}"></p>
+                                <!--
+                                    
+                                -->
+                                <p th:if="*{detail} eq null" th:id="*{bookId}">APIから情報を取得できませんでした</p>
+                                <p th:if="*{detail} neq null" th:id="*{bookId}"></p>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,20 @@
 'use strict;'
 
+function replace(){
+	window.addEventListener("load", () => {
+		books.forEach(book => {
+			console.log(book.bookId);
+			let pElement = document.getElementById(book.bookId);
+			if(book.detail != null){
+				let after = book.detail.replace(/(\r\n|\n|\r)/gm, '<br>');
+				pElement.innerHTML = after;
+			}		
+		})
+		
+	});
+}
+
+/**
 function show(){
 	books.forEach(book => {
 	fetch("https://api.openbd.jp/v1/get?isbn=" + book.isbn).then(res => {
@@ -29,3 +44,5 @@ function show(){
 		
 	});
 }
+
+ */

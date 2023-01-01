@@ -11,6 +11,8 @@ CREATE TABLE IF NOT EXISTS book (
 	author VARCHAR(1024) NOT NULL,
 	ISBN BIGINT NOT NULL,
 	last_edit_date DATETIME,
+	detail VARCHAR(2048),
+	url VARCHAR(2048),
 	editor_id VARCHAR(32) REFERENCES users 
 );
 

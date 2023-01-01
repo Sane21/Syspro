@@ -35,4 +35,8 @@ public class Book {
 	private LocalDateTime lastEditDate;
 
 	private User editor; //外部キー
+	
+	private String detail;
+	
+	private String url;
 }
