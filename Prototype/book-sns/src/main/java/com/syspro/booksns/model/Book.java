@@ -39,4 +39,5 @@ public class Book {
 	private String detail;
 	
 	private String url;
+	
 }

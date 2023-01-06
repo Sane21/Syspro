@@ -91,6 +91,10 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                                 <p th:if="*{detail} eq null" th:id="*{bookId}">APIから情報を取得できませんでした</p>
                                 <p th:if="*{detail} neq null" th:id="*{bookId}"></p>
                             </div>
+
+                            <div class="row">
+                                <a th:href="@{/comment/{id}(id=*{bookId})}" class="btn btn-info">コメントを見る</a>
+                            </div>
                         </div>
                     </div>
                 </div>

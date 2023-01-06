@@ -1,6 +1,6 @@
 package com.syspro.booksns.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -25,7 +25,7 @@ public class Comment {
 	@Size(max = 1024)
 	private String content;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd") //入力時の期待フォーマット
-	@JsonFormat(pattern = "yyyy/MM/dd") //出力
-	private LocalDate publishedDate;
+	@DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
+	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss")
+	private LocalDateTime publishedDate;
 }

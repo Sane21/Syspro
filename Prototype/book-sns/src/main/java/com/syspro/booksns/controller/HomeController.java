@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -100,20 +101,6 @@ public class HomeController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/comment")
-	public String addComment(@ModelAttribute Comment comment) {
-		return "commentForm";
-	}
-	
-	@PostMapping("/comment")
-	public String postComment(@Validated @ModelAttribute Comment comment, BindingResult result,
-			Authentication loginUser) {
-		if(result.hasErrors()) return "commentForm";
-		String editorId = loginUser.getName();
-		comment.setEditUser(userService.selectByPrimaryKey(editorId));
-		commentService.save(comment);
-		return "redirect:/";
-	}
 	
 	@GetMapping("/search")
 	public String search() {
@@ -125,6 +112,31 @@ public class HomeController {
 		User user = userService.selectByPrimaryKey(id);
 		model.addAttribute("user", user);
 		return "profile";
+	}
+	
+	@GetMapping("/comment/{id}")
+	public String comment(@PathVariable Long id, Model model, @ModelAttribute("addcomment") 
+			Comment comment) {
+		List<Comment> comments = commentService.selectBookComments(id);
+		model.addAttribute("comments", comments);
+		model.addAttribute("bookId", id);
+		return "commentForm";
+	}
+	
+	@PostMapping("/comment/{id}")
+	public String postcomment(@PathVariable Long id, @Validated @ModelAttribute("addcomment") Comment comment, 
+			BindingResult result, Authentication user, Model model) {
+		Book book = bookService.selectByPrimaryKey(id);
+		User edituser = userService.selectByPrimaryKey(user.getName());
+		
+		List<Comment> comments = commentService.selectBookComments(id);
+		model.addAttribute("comments", comments);
+		model.addAttribute("bookId", id);
+		comment.setTargetBook(book);
+		comment.setEditUser(edituser);
+		if(result.hasErrors()) return "commentForm";
+		commentService.save(comment);
+		return "redirect:/comment/" + id;
 	}
 	
 	private JsonNode getResult(String isbn) {

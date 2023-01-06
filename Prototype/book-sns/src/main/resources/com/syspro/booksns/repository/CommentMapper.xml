@@ -36,6 +36,15 @@
 		WHERE comment_id = #{id}
 	</delete>
 	
+	<select id="selectBookComments" resultMap="comment">
+		SELECT * FROM comments
+		INNER JOIN book
+		ON comments.target_book_id = book.book_id
+		INNER JOIN users
+		ON users.user_id = comments.edit_user_id
+		WHERE comments.target_book_id = #{bookId}
+	</select>
+	
 	<!-- ここから下はテーブル結合の動作 -->
 	<resultMap type="com.syspro.booksns.model.Comment" id="comment" autoMapping="true">
 		<id property="commentId" column="comment_id"/>

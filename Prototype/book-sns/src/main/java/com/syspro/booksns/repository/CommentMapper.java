@@ -23,4 +23,6 @@ public interface CommentMapper {
 	Book selectBook(Comment record);
 	
 	User selectUser(Long id);
+	
+	List<Comment> selectBookComments(Long bookId);
 }

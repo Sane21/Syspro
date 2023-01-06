@@ -42,4 +42,8 @@ public class CommentService {
 	public User selectUser(Long id) {
 		return mapper.selectUser(id);
 	}
+	
+	public List<Comment> selectBookComments(Long bookId){
+		return mapper.selectBookComments(bookId);
+	}
 }
