@@ -34,7 +34,7 @@ public class UserService {
 	}
 	
 	public int updateByPrimaryKey(User user) {
-		if(user.getUserId() != null) {
+		if(user.getUserId() == null) {
 			return -1;
 		}
 		return mapper.updateByPrimaryKey(user);

@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.syspro.booksns.model.Book;
 import com.syspro.booksns.model.Comment;
+import com.syspro.booksns.model.User;
 import com.syspro.booksns.service.BookService;
 import com.syspro.booksns.service.CommentService;
 import com.syspro.booksns.service.UserService;
@@ -81,6 +82,14 @@ public class HomeController {
 		return "bookForm";
 	}
 	
+	@PostMapping("/editProfile")
+	public String editProfile(@ModelAttribute User user) {
+		User updateUser = userService.selectByPrimaryKey(user.getUserId());
+		updateUser.setProfile(user.getProfile());
+		userService.updateByPrimaryKey(updateUser);
+		return "redirect:/";
+	}
+	
 	@GetMapping("/delete/{id}")
 	public String deleteBook(@PathVariable Long id, Authentication loginUser) {
 		Book book = bookService.selectByPrimaryKey(id);
@@ -109,6 +118,13 @@ public class HomeController {
 	@GetMapping("/search")
 	public String search() {
 		return "searchForm";
+	}
+	
+	@GetMapping("/user/{id}")
+	public String showProfile(@PathVariable String id, Model model) {
+		User user = userService.selectByPrimaryKey(id);
+		model.addAttribute("user", user);
+		return "profile";
 	}
 	
 	private JsonNode getResult(String isbn) {

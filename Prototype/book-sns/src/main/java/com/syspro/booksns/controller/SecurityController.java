@@ -22,18 +22,18 @@ public class SecurityController {
 	
 	@GetMapping("/login")
 	public String login() {
-		return "sample_login";
+		return "login";
 	}
 	
 	@GetMapping("/signup")
 	public String signup(@ModelAttribute RegisterForm registerForm) {
-		return "sample_signup";
+		return "signup";
 	}
 	
 	@PostMapping("/signup")
 	public String process(@Validated @ModelAttribute RegisterForm registerForm, 
 			BindingResult result) {
-		if(result.hasErrors()) return "sample_signup";
+		if(result.hasErrors()) return "signup";
 		User user = new User();
 		user.setUserId(registerForm.getUserId());
 		if(registerForm.getName() == "") user.setName("No name");
@@ -42,6 +42,6 @@ public class SecurityController {
 		user.setPassword(encodePass);
 		userService.insert(user);
 		
-		return "redirect:/";
+		return "redirect:/login?register";
 	}
 }

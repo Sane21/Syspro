@@ -24,7 +24,9 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                         <div class="row">
                             <div class="col-8">
                                 <p class="card-title font-weit-bold h4" th:text="*{editor.name}"></p>
-                                <p class="card-subtitle" th:text="|@*{editor.userId}|"></p>
+                                <a style="text-decoration: none; color: grey;" th:href="@{/user/{id}(id=*{editor.userId})}">
+                                    <p class="card-subtitle" th:text="|@*{editor.userId}|"></p>
+                                </a>
                             </div>
                             <th:block th:if="${#authentication.principal.username} eq *{editor.userId}">
                                 <div class="col text-end">

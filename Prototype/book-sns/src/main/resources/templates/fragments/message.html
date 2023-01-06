@@ -19,17 +19,16 @@
         <div class="alert alert-success" th:if="${param.logout}">
             <small>ログアウトしました</small>
         </div>
-        <div class="alert alert-danger" th:if="${param.unique}">
-            <small>既に使われているユーザIDです</small>
-        </div>
     </div>
 
     <div th:fragment="search">
-        <div class="alert alert-success message" th:if="${param.word} and ${books.size > 0}">
-            <small th:text="|${books.size}件の検索結果が見つかりました|"></small>
-        </div>
-        <div class="alert alert-danger message" th:if="${books.size} eq 0">
-            <small th:text="|${param.word}を含む投稿は見つかりませんでした。|"></small>
+        <div th:if="${books} neq null">
+            <div class="alert alert-success message" th:if="${param.word} and ${books.size > 0}">
+                <small th:text="|${books.size}件の検索結果が見つかりました|"></small>
+            </div>
+            <div class="alert alert-danger message" th:if="${books.size} eq 0">
+                <small th:text="|${param.word}を含む投稿は見つかりませんでした。|"></small>
+            </div>
         </div>
     </div>
 </body>

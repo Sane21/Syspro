@@ -158,3 +158,19 @@
 	margin-left: 2%;
 	text-decoration: underline;;
 }
+
+.image {
+	height: 72px;
+    width: 80px;
+    border: #dcdcdc  1px solid;
+    border-radius: 50%;
+}
+
+.profile {
+	display: block;
+	width: 100%;
+}
+
+.no-show {
+	display: none;
+}

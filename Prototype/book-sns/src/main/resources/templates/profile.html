@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8" th:remove="tag">
+<link th:href="@{/css/style.css}" rel="stylesheet">
+<script th:src="@{/js/profile.js}"></script>
+<title>プロフィール</title>
+</head>
+<body>
+    <div layout:fragment="content" class="container-fluid" style="padding-top: 5%">
+        <div class="row align-items-center justify-content-center cardlayout">
+            <div class="card shadow" th:object="${user}">
+                <div class="card-body" style="height: 300px">
+                    <th:block th:if="${#authentication.principal.username} eq *{userId}">
+                        <div class="col text-end">
+                            <a class="mybutton btn" id="editProfile">
+                                <i class="bi bi-pencil-square"></i>
+                                編集
+                            </a>
+                        </div>
+                    </th:block>
+                    <div class="row justify-content-center">
+                        <img class="image" th:src="@{/pictures/icon_user.png}">
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <p class="card-title border-bottom">
+                                <span th:text="*{name}" class="font-weit-bold h4"></span>
+                                <span th:text="|(@*{userId})|" class="h5"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row" id="profile">
+                        <p th:text="*{profile}"></p>
+                    </div>
+
+                    <th:block th:if="${#authentication.principal.username} eq *{userId}">
+                        <div class="row no-show" id="edit">
+                            <form th:action="@{/editProfile}" method="post" novalidate>
+                                <input type="hidden" th:field="*{userId}">
+                                <textarea class="profile" th:field="*{profile}" th:errorclass="is-invalid"></textarea>
+                                <div class="invalid-feedback" th:errors="*{profile}"></div>
+                                <button type="submit" class="btn rounded-pill postbook" style="margin-top: 3%;">決定</button>
+                            </form>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
