@@ -22,7 +22,7 @@
     </div>
 
     <div th:fragment="search">
-        <div th:if="${books} neq null">
+        <div th:if="${param.word} neq null">
             <div class="alert alert-success message" th:if="${param.word} and ${books.size > 0}">
                 <small th:text="|${books.size}件の検索結果が見つかりました|"></small>
             </div>
@@ -31,5 +31,16 @@
             </div>
         </div>
     </div>
+
+    <!-- エラーメッセージ -->
+	<div th:fragment="error">
+		<div class="text-center">
+			<div class="display-1" th:text="${status}"></div>
+			<div class="text-muted mb-4" th:text="${error}"></div>
+			
+			<div class="text-muted">ページを表示できません</div>
+			<a th:href="@{/}">&larr; ホームに戻る</a>
+		</div>
+	</div>
 </body>
 </html>
