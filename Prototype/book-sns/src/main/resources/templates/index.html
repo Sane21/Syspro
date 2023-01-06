@@ -9,13 +9,11 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     const books = /*[[${books}]]*/"books";
     replace();
 </script>
+<script th:src="@{/js/update.js}"></script>
 <title>トップページ</title>
 </head>
 <body>
     <div layout:fragment="content" class="container-fluid" style="padding-top: 5%">
-        <div id="push">
-            
-        </div>
         <div th:replace="~{fragments/message :: search}"></div>
         <th:block th:each="book : ${books}" th:object="${book}" th:if="${books.size > 0}">
             <div class="row cardlayout">
