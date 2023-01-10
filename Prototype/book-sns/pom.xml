@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>book-sns</artifactId>
-	<version>syspro-webapp</version>
+	<version>webapp</version>
 	<packaging>war</packaging>
 	<name>book-sns</name>
 	<description>技術書SNS</description>

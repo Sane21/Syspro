@@ -33,8 +33,8 @@
                             <th:block th:each="comment : ${comments}" th:object="${comment}" th:if="${comments.size > 0}">
                                 <tr>
                                     <td class="fw-bold">
-                                        <span th:text="*{editUser.userId}"></span>
-                                        <span th:text="|(@*{editUser.name})|"></span>
+                                        <span th:text="*{editUser.name}"></span>
+                                        <span th:text="|(@*{editUser.userId})|"></span>
                                     </td>
                                     <td>：</td>
                                     <td>
