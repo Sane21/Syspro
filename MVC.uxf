@@ -4,93 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>770</x>
-      <y>294</y>
-      <w>147</w>
-      <h>147</h>
-    </coordinates>
-    <panel_attributes>BookModel
---
-id : string
-name : string
-isbn : string
-author : string
-co_authors : List&lt;string&gt;
-publishdedDate : Date
-lastEditedDate : Date
-tags : List&lt;string&gt;
-commentsID : List&lt;string&gt;
-bookmarkUsersID : List&lt;string&gt;
---
-update()</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>777</x>
-      <y>462</y>
-      <w>133</w>
-      <h>119</h>
-    </coordinates>
-    <panel_attributes>CommentModel
---
-id : string
-writer : User
-parent : Comment
-childrrenID : List&lt;string&gt;
-targetBook : Book
-publishedDate : Date
-lgtmUsersID : List&lt;string&gt;
---
-update()</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>763</x>
-      <y>126</y>
-      <w>154</w>
-      <h>126</h>
-    </coordinates>
-    <panel_attributes>UserModel
---
-id : string
-name : string
-profile : string
-bookmarkBooksID : List&lt;string&gt;
-lgtmCommentsID : List&lt;string&gt;
-isSignUped : bool
-isAuthenticated : bool
---
-createBook() : id(string)
-createComment() : id(string)
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1001</x>
-      <y>385</y>
-      <w>70</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>Date(日付)
---
-year : int
-month : int
-day : int
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>532</x>
+      <x>511</x>
       <y>315</y>
       <w>140</w>
       <h>56</h>
@@ -104,7 +18,7 @@ doPost()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
+      <x>511</x>
       <y>434</y>
       <w>140</w>
       <h>56</h>
@@ -118,7 +32,7 @@ doPost()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>21</x>
+      <x>0</x>
       <y>70</y>
       <w>462</w>
       <h>525</h>
@@ -130,7 +44,7 @@ doPost()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
+      <x>175</x>
       <y>126</y>
       <w>154</w>
       <h>49</h>
@@ -146,7 +60,7 @@ recieveUpdateRequest()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
+      <x>175</x>
       <y>427</y>
       <w>154</w>
       <h>49</h>
@@ -162,7 +76,7 @@ recievePostRequest()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
+      <x>175</x>
       <y>483</y>
       <w>154</w>
       <h>63</h>
@@ -178,7 +92,7 @@ sendSendRequest()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>28</x>
+      <x>7</x>
       <y>126</y>
       <w>126</w>
       <h>63</h>
@@ -198,7 +112,7 @@ isAuthenticated : bool
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
+      <x>175</x>
       <y>189</y>
       <w>154</w>
       <h>49</h>
@@ -214,7 +128,7 @@ recievePostRequest()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
+      <x>175</x>
       <y>252</y>
       <w>154</w>
       <h>49</h>
@@ -230,7 +144,7 @@ recievePostRequest()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
+      <x>175</x>
       <y>364</y>
       <w>154</w>
       <h>56</h>
@@ -246,7 +160,7 @@ recievePostRequest()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
+      <x>511</x>
       <y>245</y>
       <w>140</w>
       <h>56</h>
@@ -260,7 +174,7 @@ doPost()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
+      <x>511</x>
       <y>133</y>
       <w>140</w>
       <h>56</h>
@@ -274,7 +188,7 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>343</x>
+      <x>322</x>
       <y>147</y>
       <w>203</w>
       <h>21</h>
@@ -285,7 +199,7 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>665</x>
+      <x>644</x>
       <y>147</y>
       <w>112</w>
       <h>21</h>
@@ -296,7 +210,7 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>343</x>
+      <x>322</x>
       <y>210</y>
       <w>203</w>
       <h>77</h>
@@ -307,7 +221,7 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>665</x>
+      <x>644</x>
       <y>182</y>
       <w>112</w>
       <h>105</h>
@@ -318,18 +232,18 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
+      <x>651</x>
       <y>147</y>
       <w>112</w>
-      <h>182</h>
+      <h>196</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>140.0;240.0;10.0;10.0</additional_attributes>
+    <additional_attributes>140.0;260.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
+      <x>651</x>
       <y>147</y>
       <w>119</w>
       <h>364</h>
@@ -340,7 +254,7 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>343</x>
+      <x>322</x>
       <y>266</y>
       <w>203</w>
       <h>70</h>
@@ -351,7 +265,7 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>665</x>
+      <x>644</x>
       <y>203</y>
       <w>112</w>
       <h>133</h>
@@ -362,7 +276,7 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>343</x>
+      <x>322</x>
       <y>378</y>
       <w>203</w>
       <h>70</h>
@@ -373,7 +287,7 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>343</x>
+      <x>322</x>
       <y>434</y>
       <w>203</w>
       <h>21</h>
@@ -384,7 +298,7 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>343</x>
+      <x>322</x>
       <y>441</y>
       <w>203</w>
       <h>63</h>
@@ -395,18 +309,18 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>665</x>
-      <y>245</y>
-      <w>112</w>
-      <h>217</h>
+      <x>644</x>
+      <y>259</y>
+      <w>119</w>
+      <h>203</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>140.0;10.0;10.0;290.0</additional_attributes>
+    <additional_attributes>150.0;10.0;10.0;270.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>665</x>
+      <x>644</x>
       <y>441</y>
       <w>126</w>
       <h>70</h>
@@ -417,18 +331,18 @@ doPost()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
+      <x>889</x>
       <y>147</y>
       <w>98</w>
       <h>224</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;300.0;120.0;300.0;120.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>20.0;300.0;120.0;300.0;120.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>903</x>
+      <x>882</x>
       <y>147</y>
       <w>105</w>
       <h>364</h>
@@ -439,7 +353,7 @@ doPost()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
+      <x>175</x>
       <y>308</y>
       <w>154</w>
       <h>49</h>
@@ -455,7 +369,7 @@ recievePostRequest()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>343</x>
+      <x>322</x>
       <y>322</y>
       <w>203</w>
       <h>119</h>
@@ -466,7 +380,7 @@ recievePostRequest()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>665</x>
+      <x>644</x>
       <y>364</y>
       <w>119</w>
       <h>91</h>
@@ -477,7 +391,7 @@ recievePostRequest()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>497</x>
+      <x>476</x>
       <y>70</y>
       <w>595</w>
       <h>525</h>
@@ -489,7 +403,7 @@ recievePostRequest()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>749</x>
+      <x>728</x>
       <y>91</y>
       <w>336</w>
       <h>497</h>
@@ -501,7 +415,7 @@ recievePostRequest()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>518</x>
+      <x>497</x>
       <y>98</y>
       <w>168</w>
       <h>455</h>
@@ -513,7 +427,7 @@ recievePostRequest()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>147</x>
+      <x>126</x>
       <y>133</y>
       <w>63</w>
       <h>21</h>
@@ -524,12 +438,69 @@ recievePostRequest()
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>147</x>
+      <x>126</x>
       <y>133</y>
       <w>63</w>
       <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;..</panel_attributes>
     <additional_attributes>10.0;10.0;40.0;10.0;40.0;280.0;70.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>742</x>
+      <y>119</y>
+      <w>154</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>UserModel(利用者)
+--
+id : string
+name : string
+profile : string
+password : string
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>749</x>
+      <y>252</y>
+      <w>154</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>BookModel(技術書)
+--
+bookId : long
+title : string
+isbn : string
+author : string
+lastEditDate : Date
+editor : User
+detail : string
+url string
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>448</y>
+      <w>133</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>CommentModel(感想)
+--
+commentId : long
+editUser : User
+targetBook : Book
+content : string
+pulishedDate : Date
+--
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

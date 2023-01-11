@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>170</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>User(利用者)
+--
+id : string
+name : string
+profile : string
+password : string
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>110</y>
+      <w>230</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Book(技術書)
+--
+bookId : long
+title : string
+isbn : string
+author : string
+lastEditDate : Date
+editor : User
+detail : string
+url string
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>350</y>
+      <w>190</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Comment(感想)
+--
+commentId : long
+editUser : User
+targetBook : Book
+content : string
+pulishedDate : Date
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>270</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-
+1
+
+
+0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>180</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;&gt;&gt;
+1            0..*</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>220</y>
+      <w>150</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>
+lt=-&gt;&gt;&gt;&gt;&gt;
+1
+
+
+0..*
+
+
+
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;80.0;20.0;80.0;170.0;130.0;170.0</additional_attributes>
+  </element>
+</diagram>
